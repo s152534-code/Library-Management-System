@@ -1,1 +1,105 @@
 
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Contact Us - Library Management System</title>
+        <!-- External CSS: the same file is linked from every page. -->
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <style type="text/css">
+            .team-note {
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 1. Website header -->
+        <header>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
+            </a>
+            <h1>Library Management System</h1>
+            <p>Red Team - COMP3700</p>
+        </header>
+        <!-- 2. Navigation: all pages use the same links. -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="catalog.html">Book Catalog</a>
+                </li>
+                <li>
+                    <a href="book-details.html">Book Details</a>
+                </li>
+                <li>
+                    <a href="manage-books.html">Manage Books</a>
+                </li>
+                <li>
+                    <a href="borrow-return.html">Borrow and Return</a>
+                </li>
+                <li>
+                    <a href="members.html">Members</a>
+                </li>
+                <li>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="contact.html" class="current" aria-current="page">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 3. Page content -->
+        <main id="main-content">
+            <h2>Contact Us</h2>
+            <p>Use the form below to prepare a message for the project team.</p>
+            <form action="mailto:s152534@student.squ.edu.om" method="post" enctype="text/plain">
+                <fieldset>
+                    <legend>Your message</legend>
+                    <p>
+                        <label for="sender_name">Name *</label>
+                        <input type="text" id="sender_name" name="sender_name" required="required" maxlength="75"/>
+                    </p>
+                    <p>
+                        <label for="sender_email">Email *</label>
+                        <input type="email" id="sender_email" name="sender_email" required="required"/>
+                    </p>
+                    <p>
+                        <label for="topic">Topic</label>
+                        <select id="topic" name="topic">
+                            <option value="books">Books</option>
+                            <option value="membership">Membership</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="4" cols="40" required="required" maxlength="2000"></textarea>
+                    </p>
+                </fieldset>
+                <p>
+                    <input class="button" type="submit" value="Open Email Message"/>
+                    <input class="button" type="reset" value="Reset"/>
+                </p>
+            </form>
+            <p class="team-note">* Required field. If no email application opens, copy your message into your usual email service.</p>
+            <p>Email link: <a href="mailto:s152534@student.squ.edu.om">s152534@student.squ.edu.om</a>
+            </p>
+            <p>Email link: <a href="mailto:s152433@student.squ.edu.om">s152433@student.squ.edu.om</a>
+            </p>
+        </main>
+        <!-- 4. Website footer -->
+        <footer>
+            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
+            <p>Library Management System - Student Project</p>
+        </footer>
+    </body>
+</html>
