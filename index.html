@@ -1,1 +1,93 @@
-
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Home - Library Management System</title>
+        <!-- External CSS: the same file is linked from every page. -->
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+    <body>
+        <!-- 1. Website header -->
+        <header>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
+            </a>
+            <h1>Library Management System</h1>
+            <p>Red Team - COMP3700</p>
+        </header>
+        <!-- 2. Navigation: all pages use the same links. -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html" class="current">Home</a>
+                </li>
+                <li>
+                    <a href="catalog.html">Book Catalog</a>
+                </li>
+                <li>
+                    <a href="book-details.html">Book Details</a>
+                </li>
+                <li>
+                    <a href="manage-books.html">Manage Books</a>
+                </li>
+                <li>
+                    <a href="borrow-return.html">Borrow and Return</a>
+                </li>
+                <li>
+                    <a href="members.html">Members</a>
+                </li>
+                <li>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 3. Page content -->
+        <main id="main-content">
+            <h2>Home</h2>
+            <p class="introduction">Welcome to our Library Management System. This website is a course project by Red Team. It helps visitors view books and see examples of library services.</p>
+            <h3>What can you find here?</h3>
+            <ul>
+                <li>A catalog with book titles, authors, and availability.</li>
+                <li>Forms for book records, borrowing, and member registration.</li>
+                <li>Tables showing example library records.</li>
+            </ul>
+            <h3>Some books in our collection</h3>
+            <div class="book-pictures">
+                <a href="book-details.html#BK001">
+                    <img src="images/web.svg" alt="Foundations of Web Design book cover" width="300" height="410"/>
+                </a>
+                <a href="book-details.html#BK003">
+                    <img src="images/databases.svg" alt="A Practical Guide to Databases book cover" width="300" height="410"/>
+                </a>
+                <a href="book-details.html#BK004">
+                    <img src="images/calculus.svg" alt="Calculus for Everyday Problems book cover" width="300" height="410"/>
+                </a>
+            </div>
+            <p>
+                <a href="catalog.html">View the full book catalog</a>
+            </p>
+            <h3>How to use the website</h3>
+            <ol>
+                <li>Open the book catalog.</li>
+                <li>Choose a book and read its details.</li>
+                <li>Open the borrowing form to try a sample request.</li>
+            </ol>
+            <p class="note">This Part II website uses HTML and CSS only. Books and member records are fictional examples. Forms do not update the tables.</p>
+        </main>
+        <!-- 4. Website footer -->
+        <footer>
+            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
+            <p>Library Management System - Student Project</p>
+        </footer>
+    </body>
+</html>
