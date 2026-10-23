@@ -1,0 +1,304 @@
+/* Red Team - COMP3700 Part II
+   This stylesheet is used by all pages. */
+
+/* 1. Universal selector */
+* {
+    box-sizing: border-box;
+}
+
+/* 2. Simple selectors */
+body {
+    margin: 0;
+    background-color: #eeeeee;
+    color: #222222;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+header {
+    padding: 15px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+header img {
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+}
+
+header p {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+h1, h2, h3 {
+    color: #234e70;
+}
+
+h1 {
+    margin: 5px 0;
+    font-size: 26px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+nav {
+    padding: 10px;
+    background-color: #234e70;
+    text-align: center;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+    display: inline-block;
+    margin: 3px;
+}
+
+/* 3. Contextual selector */
+nav a {
+    display: inline-block;
+    padding: 6px 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* 4. ID-linked selector */
+#main-content {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+/* 5. Class selector (tag name plus class) */
+p.note {
+    padding: 10px;
+    background-color: #fff6d9;
+    border-left: 4px solid #bc8b20;
+    font-size: 14px;
+}
+
+/* 6. Generic selector (a class without a tag name) */
+.highlight {
+    color: #234e70;
+    font-weight: bold;
+}
+
+/* 7. Pseudo-class selectors: link states */
+a:link {
+    color: #145da0;
+}
+
+a:visited {
+    color: #6b378c;
+}
+
+a:hover {
+    color: #a32b20;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #9a5300;
+}
+
+a:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid #b67c00;
+    outline-offset: 2px;
+}
+
+nav a:link, nav a:visited {
+    color: #ffffff;
+}
+
+nav a:hover, nav a:focus {
+    background-color: #416f92;
+}
+
+nav a:active {
+    background-color: #132f45;
+}
+
+nav a.current {
+    background-color: #ffffff;
+    color: #234e70;
+    font-weight: bold;
+}
+
+.introduction {
+    text-indent: 20px;
+}
+
+ul, ol {
+    padding-left: 30px;
+    list-style-position: outside;
+}
+
+ul {
+    list-style-type: square;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+.book-pictures {
+    text-align: center;
+}
+
+.book-pictures img {
+    width: 130px;
+    max-width: 100%;
+    height: auto;
+    margin: 10px;
+    vertical-align: middle;
+}
+
+.book-section {
+    overflow: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #cccccc;
+}
+
+.book-section img {
+    float: right;
+    width: 100px;
+    height: auto;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* Table spacing, padding, borders and column formatting */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+caption {
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #999999;
+    text-align: left;
+}
+
+thead, tfoot {
+    background-color: #dce8f2;
+}
+
+.alternate-row {
+    background-color: #f0f0f0;
+}
+
+.category-column {
+    background-color: #edf3f8;
+}
+
+.member-table {
+    border-collapse: separate;
+    border-spacing: 3px;
+}
+
+/* Forms use a single column to keep their layout simple. */
+form {
+    max-width: 600px;
+}
+
+fieldset {
+    min-width: 0;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #999999;
+}
+
+legend, label {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #999999;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.choices label {
+    font-weight: normal;
+}
+
+.choices input {
+    width: auto;
+    margin-right: 8px;
+}
+
+.button {
+    width: auto;
+    margin-right: 5px;
+    margin-bottom: 8px;
+    padding: 8px 15px;
+    background-color: #234e70;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #416f92;
+}
+
+.button:disabled {
+    opacity: 0.8;
+    background-color: #666666;
+    cursor: not-allowed;
+}
+
+footer {
+    padding: 15px;
+    background-color: #234e70;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+
