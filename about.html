@@ -1,1 +1,103 @@
 
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>About Us - Library Management System</title>
+        <!-- External CSS: the same file is linked from every page. -->
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <!-- Internal CSS: these two rules are only used on the About page. -->
+        <style type="text/css">
+    #team-list {
+        background-color: #edf3f8;
+        padding: 15px 35px;
+    }
+
+    .team-note {
+        font-style: italic;
+    }
+</style>
+    </head>
+    <body>
+        <!-- 1. Website header -->
+        <header>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
+            </a>
+            <h1>Library Management System</h1>
+            <p>Red Team - COMP3700</p>
+        </header>
+        <!-- 2. Navigation: all pages use the same links. -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="catalog.html">Book Catalog</a>
+                </li>
+                <li>
+                    <a href="book-details.html">Book Details</a>
+                </li>
+                <li>
+                    <a href="manage-books.html">Manage Books</a>
+                </li>
+                <li>
+                    <a href="borrow-return.html">Borrow and Return</a>
+                </li>
+                <li>
+                    <a href="members.html">Members</a>
+                </li>
+                <li>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="about.html" class="current" aria-current="page">About Us</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 3. Page content -->
+        <main id="main-content">
+            <h2>About Us</h2>
+            <p class="introduction">We are Red Team, and this is our COMP3700 project at Sultan Qaboos University. Our website presents a simple system for organizing library books, members, and borrowing records.</p>
+            <h3>Our objectives</h3>
+            <ul>
+                <li>Help readers find information about books.</li>
+                <li>Provide clear forms for common library tasks.</li>
+                <li>Organize sample records using tables.</li>
+            </ul>
+            <h3>Team members</h3>
+            <ul id="team-list">
+                <li>Saad Salim Abdullah Al Humaimi - 152534</li>
+                <li>Mahmoud Said Abdullah Al Jaradi - 152433</li>
+            </ul>
+            <p class="team-note">Course: COMP3700 - Introduction to Web Computing, Fall 2026.</p>
+            <h3>Who is the website for?</h3>
+            <dl>
+                <dt class="highlight">- Students and members:</dt>
+                <dd>Browse books and view borrowing information.</dd>
+                <dt class="highlight">- Librarians:</dt>
+                <dd>Explore the forms used to manage books and members.</dd>
+            </dl>
+            <h3>Contact the team</h3>
+            <p>Email: <a href="mailto:s152534@student.squ.edu.om">s152534@student.squ.edu.om</a>
+            </p>
+            <p>Email: <a href="mailto:s152433@student.squ.edu.om">s152433@student.squ.edu.om</a>
+            </p>
+            <p>You can also open the <a href="contact.html">Contact Us page</a>.</p>
+        </main>
+        <!-- 4. Website footer -->
+        <footer>
+            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
+            <p>Library Management System - Student Project</p>
+        </footer>
+    </body>
+</html>
+
