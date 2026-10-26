@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Manage Books - Library Management System</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+    <body>
+        <!-- 1. Website header -->
+        <header>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
+            </a>
+            <h1>Library Management System</h1>
+            <p>Red Team - COMP3700</p>
+        </header>
+        <!-- 2. Navigation: all pages use the same links. -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="catalog.html">Book Catalog</a>
+                </li>
+                <li>
+                    <a href="book-details.html">Book Details</a>
+                </li>
+                <li>
+                    <a href="manage-books.html" class="current" aria-current="page">Manage Books</a>
+                </li>
+                <li>
+                    <a href="borrow-return.html">Borrow and Return</a>
+                </li>
+                <li>
+                    <a href="members.html">Members</a>
+                </li>
+                <li>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 3. Page content -->
+        <main id="main-content">
+            <h2>Manage Books</h2>
+            <p>This form shows how a librarian could request a new book record or update an existing record.</p>
+
+            <form action="https://httpbin.org/get" method="get" target="_blank" rel="noopener">
+                <input type="hidden" name="form_type" value="book_record"/>
+                <fieldset>
+                    <legend>Request type</legend>
+                    <div class="choices">
+                        <label>
+                            <input type="radio" name="operation" value="add" checked="checked"/> Add a book</label>
+                        <label>
+                            <input type="radio" name="operation" value="update"/> Update a book</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Book information</legend>
+                    <p>
+                        <label for="book_id">Book ID *</label>
+                        <input type="text" id="book_id" name="book_id" required="required" maxlength="10" placeholder="BK007"/>
+                    </p>
+                    <p>
+                        <label for="book_title">Book title *</label>
+                        <input type="text" id="book_title" name="book_title" required="required" maxlength="120"/>
+                    </p>
+                    <p>
+                        <label for="author">Author *</label>
+                        <input type="text" id="author" name="author" required="required" maxlength="80"/>
+                    </p>
+                    <p>
+                        <label for="book_category">Category</label>
+                        <select id="book_category" name="book_category">
+                            <option value="computing">Computing</option>
+                            <option value="mathematics">Mathematics</option>
+                            <option value="study_skills">Study skills</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="publication_year">Publication year</label>
+                        <input type="number" id="publication_year" name="publication_year" min="1400" max="2026" value="2026"/>
+                    </p>
+                    <p>
+                        <label for="shelf">Shelf location</label>
+                        <input type="text" id="shelf" name="shelf" maxlength="20" placeholder="C-05"/>
+                    </p>
+                    <p>
+                        <label for="book_description">Description</label>
+                        <textarea id="book_description" name="book_description" rows="4" cols="40"></textarea>
+                    </p>
+                </fieldset>
+                <div class="choices">
+                    <label>
+                        <input type="checkbox" name="available" value="yes" checked="checked"/> The book is available.</label>
+                    <label>
+                        <input type="checkbox" name="reference_only" value="yes"/> The book is for reference use only.</label>
+                </div>
+                <p>
+                    <input class="button" type="submit" value="Submit Book Request"/>
+                    <input class="button" type="reset" value="Reset"/>
+                </p>
+            </form>
+            <p>* Required field. Check the <a href="catalog.html">catalog</a> for existing book IDs.</p>
+            <p class="note">This is a practice form. Use fictional data only. 
+                The values are sent to httpbin in a new tab and are not saved in this website.</p>
+        </main>
+        <!-- 4. Website footer -->
+        <footer>
+            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
+            <p>Library Management System - Student Project</p>
+        </footer>
+    </body>
+</html>
 
