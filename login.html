@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Login Example - Library Management System</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+    <body>
+        <!-- 1. Website header -->
+        <header>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
+            </a>
+            <h1>Library Management System</h1>
+            <p>Red Team - COMP3700</p>
+        </header>
+        <!-- 2. Navigation: all pages use the same links. -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="catalog.html">Book Catalog</a>
+                </li>
+                <li>
+                    <a href="book-details.html">Book Details</a>
+                </li>
+                <li>
+                    <a href="manage-books.html">Manage Books</a>
+                </li>
+                <li>
+                    <a href="borrow-return.html">Borrow and Return</a>
+                </li>
+                <li>
+                    <a href="members.html">Members</a>
+                </li>
+                <li>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                    <a href="login.html" class="current" aria-current="page">Login</a>
+                </li>
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 3. Page content -->
+        <main id="main-content">
+            <h2>Login</h2>
+            <p>This page shows the design of a login form. Real login and access control will be added in a later phase.</p>
+            <form action="https://httpbin.org/get" method="get" target="_blank" rel="noopener">
+                <input type="hidden" name="form_type" value="login_example"/>
+                <fieldset>
+                    <legend>login details</legend>
+                    <p>
+                        <label for="demo_username">username</label>
+                        <input type="text" id="demo_username" name="demo_username" value="demo-user" required="required"/>
+                    </p>
+                    <p class="note">Do not use a real account or password. 
+                        The password below is fixed demonstration text. 
+                        The form sends sample values to httpbin and does not log you in, at least for now.</p>
+
+                    <p>
+                        <label for="demo_password">Fixed demonstration password</label>
+                        <input type="password" id="demo_password" name="demo_password" value="demo-only" readonly="readonly" autocomplete="off"/>
+                    </p>
+                    <p>
+                        <label for="role">Role</label>
+                        <select id="role" name="role">
+                            <option value="member">Member</option>
+                            <option value="librarian">Librarian</option>
+                        </select>
+                    </p>
+                </fieldset>
+                <p>
+                    <input class="button" type="submit" value="Submit Login"/>
+                    <input class="button" type="reset" value="Reset"/>
+                </p>
+                <p>
+                    <input class="button" type="button" value="Password recovery unavailable" disabled="disabled"/>
+                </p>
+            </form>
+            <p>The password recovery button is a control example for a future phase. It does not perform an action.</p>
+            <p>
+                <a href="members.html">Open the member registration form</a>
+            </p>
+        </main>
+        <!-- 4. Website footer -->
+        <footer>
+            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
+            <p>Library Management System - Student Project</p>
+        </footer>
+    </body>
+</html>
 
