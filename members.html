@@ -1,1 +1,169 @@
 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Members - Library Management System</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+    <body>
+        <!-- 1. Website header -->
+        <header>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
+            </a>
+            <h1>Library Management System</h1>
+            <p>Red Team - COMP3700</p>
+        </header>
+        <!-- 2. Navigation: all pages use the same links. -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="catalog.html">Book Catalog</a>
+                </li>
+                <li>
+                    <a href="book-details.html">Book Details</a>
+                </li>
+                <li>
+                    <a href="manage-books.html">Manage Books</a>
+                </li>
+                <li>
+                    <a href="borrow-return.html">Borrow and Return</a>
+                </li>
+                <li>
+                    <a href="members.html" class="current" aria-current="page">Members</a>
+                </li>
+                <li>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 3. Page content -->
+        <main id="main-content">
+            <h2>Members</h2>
+            <p>Use this practice form to enter an example library member.</p>
+            <form action="https://httpbin.org/get" method="get" target="_blank" rel="noopener">
+                <input type="hidden" name="form_type" value="member_registration"/>
+                <fieldset>
+                    <legend>Member information</legend>
+                    <p>
+                        <label for="member_name">Sample full name *</label>
+                        <input type="text" id="member_name" name="member_name" required="required" maxlength="80" placeholder="Demo Member 05"/>
+                    </p>
+                    <p>
+                        <label for="member_email">Sample email *</label>
+                        <input type="email" id="member_email" name="member_email" required="required" placeholder="reader@example.com"/>
+                    </p>
+                    <p>
+                        <label for="member_type">Member type</label>
+                        <select id="member_type" name="member_type">
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="community">Community</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="interests">Reading interests</label>
+                        <select id="interests" name="interests" multiple="multiple" size="3">
+                            <option value="computing">Computing</option>
+                            <option value="mathematics">Mathematics</option>
+                            <option value="study_skills">Study skills</option>
+                        </select>
+                    </p>
+                    <p>Hold Ctrl on Windows or Command on Mac to choose more than one interest.</p>
+                </fieldset>
+                <fieldset>
+                    <legend>Preferences</legend>
+                    <div class="choices">
+                        <label>
+                            <input type="radio" name="contact_method" value="email" checked="checked"/> Contact by email</label>
+                        <label>
+                            <input type="radio" name="contact_method" value="library_desk"/> Contact at the library desk</label>
+                        <label>
+                            <input type="checkbox" name="updates" value="yes"/> Receive collection updates</label>
+                        <label>
+                            <input type="checkbox" name="sample_data" value="yes" required="required"/> I am using fictional sample data. *</label>
+                    </div>
+                </fieldset>
+                <p>
+                    <input class="button" type="submit" value="Submit Member"/>
+                    <input class="button" type="reset" value="Reset"/>
+                </p>
+                <p class="note">This is a practice form. Use fictional data only. 
+                The values are sent to httpbin in a new tab and are not saved in this website.</p>
+            </form>
+            <h3>Sample member list</h3>
+            <div class="table-container" tabindex="0" role="region" aria-label="Member list">
+                <table class="member-table">
+                    <caption>Fictional member records</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" rowspan="2">ID</th>
+                            <th scope="col" rowspan="2">Name</th>
+                            <th scope="colgroup" colspan="2">Membership</th>
+                            <th scope="col" rowspan="2">Active loans</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Type</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">MB001</th>
+                            <td>Demo Member 01</td>
+                            <td>Student</td>
+                            <td>Active</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="alternate-row">
+                            <th scope="row">MB002</th>
+                            <td>Demo Member 02</td>
+                            <td>Student</td>
+                            <td>Active</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MB003</th>
+                            <td>Demo Member 03</td>
+                            <td>Teacher</td>
+                            <td>Active</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="alternate-row">
+                            <th scope="row">MB004</th>
+                            <td>Demo Member 04</td>
+                            <td>Community</td>
+                            <td>Inactive</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row" colspan="4">Total members: 4</th>
+                            <td>2 loans</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </main>
+        <!-- 4. Website footer -->
+        <footer>
+            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
+            <p>Library Management System - Student Project</p>
+        </footer>
+    </body>
+</html>
