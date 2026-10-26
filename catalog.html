@@ -1,1 +1,179 @@
 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Book Catalog - Library Management System</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+    <body>
+        <!-- 1. Website header -->
+        <header>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
+            </a>
+            <h1>Library Management System</h1>
+            <p>Red Team - COMP3700</p>
+        </header>
+        <!-- 2. Navigation: all pages use the same links. -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="catalog.html" class="current" aria-current="page">Book Catalog</a>
+                </li>
+                <li>
+                    <a href="book-details.html">Book Details</a>
+                </li>
+                <li>
+                    <a href="manage-books.html">Manage Books</a>
+                </li>
+                <li>
+                    <a href="borrow-return.html">Borrow and Return</a>
+                </li>
+                <li>
+                    <a href="members.html">Members</a>
+                </li>
+                <li>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 3. Page content -->
+        <main id="main-content">
+            <h2>Book Catalog</h2>
+            <p>Our sample collection contains six books. Click a book ID to read more about it.</p>
+            <h3>Search request</h3>
+            <form action="https://httpbin.org/get" method="get" target="_blank" rel="noopener">
+                <input type="hidden" name="form_type" value="book_search"/>
+                <p>
+                    <label for="search_text">Book title or author</label>
+                    <input type="text" id="search_text" name="search_text" maxlength="100"/>
+                </p>
+                <p>
+                    <label for="category">Category</label>
+                    <select id="category" name="category">
+                        <option value="all">All categories</option>
+                        <option value="computing">Computing</option>
+                        <option value="mathematics">Mathematics</option>
+                        <option value="study_skills">Study skills</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="availability">Availability</label>
+                    <select id="availability" name="availability">
+                        <option value="all">All books</option>
+                        <option value="available">Available</option>
+                        <option value="borrowed">Borrowed</option>
+                        <option value="overdue">Overdue</option>
+                    </select>
+                </p>
+                <p>
+                    <input class="button" type="submit" value="Send Search Request"/>
+                    <input class="button" type="reset" value="Reset"/>
+                </p>
+            </form>
+            <p class="note">This is a practice form. Use fictional data only. 
+                The values are sent to httpbin in a new tab and are not saved in this website.
+                It does not filter the table below.</p>
+            <h3>Book list</h3>
+            <div class="table-container" tabindex="0" role="region" aria-label="Book list">
+                <table>
+                    <caption>Sample collection on 22 October 2026</caption>
+                    <colgroup>
+                        <col class="category-column"/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">Category</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="rowgroup" rowspan="4">Computing</th>
+                            <th scope="row">
+                                <a href="book-details.html#BK001">BK001</a>
+                            </th>
+                            <td>Foundations of Web Design</td>
+                            <td>Maya Reed</td>
+                            <td>Available</td>
+                        </tr>
+                        <tr class="alternate-row">
+                            <th scope="row">
+                                <a href="book-details.html#BK002">BK002</a>
+                            </th>
+                            <td>Java Programming Essentials</td>
+                            <td>Omar Hale</td>
+                            <td>Borrowed</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <a href="book-details.html#BK003">BK003</a>
+                            </th>
+                            <td>A Practical Guide to Databases</td>
+                            <td>Nora Ellis</td>
+                            <td>Available</td>
+                        </tr>
+                        <tr class="alternate-row">
+                            <th scope="row">
+                                <a href="book-details.html#BK005">BK005</a>
+                            </th>
+                            <td>Understanding Computer Systems</td>
+                            <td>Sam Rowan</td>
+                            <td>Overdue</td>
+                        </tr>
+                        <tr>
+                            <th scope="rowgroup" rowspan="1">Mathematics</th>
+                            <th scope="row">
+                                <a href="book-details.html#BK004">BK004</a>
+                            </th>
+                            <td>Calculus for Everyday Problems</td>
+                            <td>Avery Cole</td>
+                            <td>Available</td>
+                        </tr>
+                        <tr class="alternate-row">
+                            <th scope="rowgroup" rowspan="1">Study skills</th>
+                            <th scope="row">
+                                <a href="book-details.html#BK006">BK006</a>
+                            </th>
+                            <td>Research and Academic Writing</td>
+                            <td>Lina Hart</td>
+                            <td>Available</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row" colspan="4">Total number of books</th>
+                            <td>6</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </main>
+        <!-- 4. Website footer -->
+        <footer>
+            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
+            <p>Library Management System - Student Project</p>
+        </footer>
+    </body>
+</html>
