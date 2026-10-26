@@ -1,1 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Library Dashboard - Library Management System</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+    <body>
+        <!-- 1. Website header -->
+        <header>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
+            </a>
+            <h1>Library Management System</h1>
+            <p>Red Team - COMP3700</p>
+        </header>
+        <!-- 2. Navigation: all pages use the same links. -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="catalog.html">Book Catalog</a>
+                </li>
+                <li>
+                    <a href="book-details.html">Book Details</a>
+                </li>
+                <li>
+                    <a href="manage-books.html">Manage Books</a>
+                </li>
+                <li>
+                    <a href="borrow-return.html">Borrow and Return</a>
+                </li>
+                <li>
+                    <a href="members.html">Members</a>
+                </li>
+                <li>
+                    <a href="dashboard.html" class="current" aria-current="page">Dashboard</a>
+                </li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 3. Page content -->
+        <main id="main-content">
+            <h2>Library Dashboard</h2>
+            <p>This page summarizes the sample records on 22 October 2026. These numbers are written directly in HTML.</p>
+            <h3>Library totals</h3>
+            <ul>
+                <li>Total books: <strong>6</strong>
+                </li>
+                <li>Available books: <strong>4</strong>
+                </li>
+                <li>Borrowed books: <strong>2</strong>
+                </li>
+                <li>Overdue books: <strong>1</strong>
+                </li>
+                <li>Registered members: <strong>4</strong>
+                </li>
+                <li>Active members: <strong>3</strong>
+                </li>
+            </ul>
+            <p style="color: #9a3d22; font-weight: bold;">The overdue book is already included in the two borrowed books.</p>
+            <h3>Books by category</h3>
+            <div class="table-container" tabindex="0" role="region" aria-label="Category summary">
+                <table>
+                    <caption>Collection summary</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" rowspan="2">Category</th>
+                            <th scope="colgroup" colspan="3">Number of copies</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Total</th>
+                            <th scope="col">Available</th>
+                            <th scope="col">Borrowed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Computing</th>
+                            <td>4</td>
+                            <td>2</td>
+                            <td>2</td>
+                        </tr>
+                        <tr class="alternate-row">
+                            <th scope="row">Mathematics</th>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Study skills</th>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Total</th>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>2</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <p>
+                <a href="borrow-return.html">View borrowing records</a> | 
+                <a href="members.html">View member records</a>
+            </p>
+        </main>
+        <!-- 4. Website footer -->
+        <footer>
+            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
+            <p>Library Management System - Student Project</p>
+        </footer>
+    </body>
+</html>
 
