@@ -1,179 +1,365 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Book Catalog - Library Management System</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <title>
+            Book Catalog - Library Management System
+        </title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
     </head>
-    <body>
-        <!-- 1. Website header -->
-        <header>
-            <a href="index.html">
-                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
-            </a>
-            <h1>Library Management System</h1>
-            <p>Red Team - COMP3700</p>
+    <body class="bg-light">
+        <a class="visually-hidden-focusable" href="#main-content">
+            Skip to content
+        </a>
+        <header class="bg-white border-bottom py-3">
+            <div class="container d-flex align-items-center gap-3">
+                <a href="index.html">
+                    <img
+                        alt="Library home"
+                        class="object-fit-contain"
+                        height="50"
+                        src="images/logo.png"
+                        width="92"
+                    />
+                </a>
+                <div>
+                    <p class="fs-4 mb-0">
+                        Library Management System
+                    </p>
+                    <p class="text-secondary mb-0">
+                        Red Team · COMP3700
+                    </p>
+                </div>
+            </div>
         </header>
-        <!-- 2. Navigation: all pages use the same links. -->
-        <nav aria-label="Main navigation">
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="catalog.html" class="current" aria-current="page">Book Catalog</a>
-                </li>
-                <li>
-                    <a href="book-details.html">Book Details</a>
-                </li>
-                <li>
-                    <a href="manage-books.html">Manage Books</a>
-                </li>
-                <li>
-                    <a href="borrow-return.html">Borrow and Return</a>
-                </li>
-                <li>
-                    <a href="members.html">Members</a>
-                </li>
-                <li>
-                    <a href="dashboard.html">Dashboard</a>
-                </li>
-                <li>
-                    <a href="login.html">Login</a>
-                </li>
-                <li>
-                    <a href="about.html">About Us</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact Us</a>
-                </li>
-            </ul>
+        <nav aria-label="Main navigation" class="navbar navbar-expand-xl bg-dark" data-bs-theme="dark">
+            <div class="container">
+                <span class="navbar-brand d-xl-none">
+                    Menu
+                </span>
+                <button
+                    aria-controls="main-nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#main-nav"
+                    data-bs-toggle="collapse"
+                    type="button"
+                >
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="navbar-nav gap-xl-2">
+                        <li>
+                            <a class="nav-link" href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a aria-current="page" class="nav-link active" href="catalog.html">
+                                Book Catalog
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="members.html">
+                                Members
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="questionnaire.html">
+                                Questionnaire
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="calculate.html">
+                                Calculator
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="funpage.html">
+                                Book Game
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button
+                                aria-expanded="false"
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                type="button"
+                            >
+                                More
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="book-details.html">
+                                        Book Details
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="manage-books.html">
+                                        Manage Books
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="borrow-return.html">
+                                        Borrow and Return
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="dashboard.html">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="login.html">
+                                        Login
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="about.html">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="contact.html">
+                                        Contact Us
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <!-- 3. Page content -->
-        <main id="main-content">
-            <h2>Book Catalog</h2>
-            <p>Our sample collection contains six books. Click a book ID to read more about it.</p>
-            <h3>Search request</h3>
-            <form action="https://httpbin.org/get" method="get" target="_blank" rel="noopener">
-                <input type="hidden" name="form_type" value="book_search"/>
-                <p>
-                    <label for="search_text">Book title or author</label>
-                    <input type="text" id="search_text" name="search_text" maxlength="100"/>
-                </p>
-                <p>
-                    <label for="category">Category</label>
-                    <select id="category" name="category">
-                        <option value="all">All categories</option>
-                        <option value="computing">Computing</option>
-                        <option value="mathematics">Mathematics</option>
-                        <option value="study_skills">Study skills</option>
-                    </select>
-                </p>
-                <p>
-                    <label for="availability">Availability</label>
-                    <select id="availability" name="availability">
-                        <option value="all">All books</option>
-                        <option value="available">Available</option>
-                        <option value="borrowed">Borrowed</option>
-                        <option value="overdue">Overdue</option>
-                    </select>
-                </p>
-                <p>
-                    <input class="button" type="submit" value="Send Search Request"/>
-                    <input class="button" type="reset" value="Reset"/>
-                </p>
-            </form>
-            <p class="note">This is a practice form. Use fictional data only. 
-                The values are sent to httpbin in a new tab and are not saved in this website.
-                It does not filter the table below.</p>
-            <h3>Book list</h3>
-            <div class="table-container" tabindex="0" role="region" aria-label="Book list">
-                <table>
-                    <caption>Sample collection on 22 October 2026</caption>
-                    <colgroup>
-                        <col class="category-column"/>
-                        <col/>
-                        <col/>
-                        <col/>
-                        <col/>
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th scope="col">Category</th>
-                            <th scope="col">ID</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Author</th>
-                            <th scope="col">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="rowgroup" rowspan="4">Computing</th>
-                            <th scope="row">
-                                <a href="book-details.html#BK001">BK001</a>
-                            </th>
-                            <td>Foundations of Web Design</td>
-                            <td>Maya Reed</td>
-                            <td>Available</td>
-                        </tr>
-                        <tr class="alternate-row">
-                            <th scope="row">
-                                <a href="book-details.html#BK002">BK002</a>
-                            </th>
-                            <td>Java Programming Essentials</td>
-                            <td>Omar Hale</td>
-                            <td>Borrowed</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <a href="book-details.html#BK003">BK003</a>
-                            </th>
-                            <td>A Practical Guide to Databases</td>
-                            <td>Nora Ellis</td>
-                            <td>Available</td>
-                        </tr>
-                        <tr class="alternate-row">
-                            <th scope="row">
-                                <a href="book-details.html#BK005">BK005</a>
-                            </th>
-                            <td>Understanding Computer Systems</td>
-                            <td>Sam Rowan</td>
-                            <td>Overdue</td>
-                        </tr>
-                        <tr>
-                            <th scope="rowgroup" rowspan="1">Mathematics</th>
-                            <th scope="row">
-                                <a href="book-details.html#BK004">BK004</a>
-                            </th>
-                            <td>Calculus for Everyday Problems</td>
-                            <td>Avery Cole</td>
-                            <td>Available</td>
-                        </tr>
-                        <tr class="alternate-row">
-                            <th scope="rowgroup" rowspan="1">Study skills</th>
-                            <th scope="row">
-                                <a href="book-details.html#BK006">BK006</a>
-                            </th>
-                            <td>Research and Academic Writing</td>
-                            <td>Lina Hart</td>
-                            <td>Available</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th scope="row" colspan="4">Total number of books</th>
-                            <td>6</td>
-                        </tr>
-                    </tfoot>
-                </table>
+        <main class="container py-4" id="main-content">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h1 class="h2">
+                        Book Catalog
+                    </h1>
+                    <p>
+                        Search our collection by ID, title or author. You can also add a book to try the
+                        catalog.
+                    </p>
+                    <section class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="h5">
+                                Find a book
+                            </h2>
+                            <form
+                                class="row g-3 was-validated"
+                                id="book-search"
+                                onsubmit="displayBooks(); return false"
+                            >
+                                <div class="col-md-6">
+                                    <label class="form-label" for="book-query">
+                                        ID, title or author
+                                    </label>
+                                    <input
+                                        aria-describedby="book-query-error"
+                                        class="form-control"
+                                        id="book-query"
+                                        maxlength="120"
+                                        name="book-query"
+                                        type="text"
+                                    />
+                                    <div class="invalid-feedback" id="book-query-error">
+                                        Please enter id, title or author.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="filter-category">
+                                        Category
+                                    </label>
+                                    <select class="form-select" id="filter-category" name="filter-category">
+                                        <option value="All categories">
+                                            All categories
+                                        </option>
+                                        <option value="Computing">
+                                            Computing
+                                        </option>
+                                        <option value="Mathematics">
+                                            Mathematics
+                                        </option>
+                                        <option value="Study skills">
+                                            Study skills
+                                        </option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select an option.
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex gap-2">
+                                    <button class="btn btn-danger" type="submit">
+                                        Search
+                                    </button>
+                                    <button
+                                        class="btn btn-outline-secondary"
+                                        onclick="resetBookSearch()"
+                                        type="button"
+                                    >
+                                        Reset
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                    <p id="book-count" role="status">
+                    </p>
+                    <div aria-label="Book catalog" class="table-responsive" role="region" tabindex="0">
+                        <table
+                            aria-label="Book catalog"
+                            class="table table-bordered align-middle mb-0"
+                            id="book-table"
+                        >
+                        </table>
+                    </div>
+                    <section class="card mt-4" id="add-book">
+                        <div class="card-body">
+                            <h2 class="h5">
+                                Add a book
+                            </h2>
+                            <form
+                                class="row g-3 was-validated"
+                                id="book-add"
+                                onreset='document.getElementById("book-message").innerText = ""'
+                                onsubmit="return saveBook()"
+                            >
+                                <div class="col-md-6">
+                                    <label class="form-label" for="book-id">
+                                        Book ID *
+                                    </label>
+                                    <input
+                                        aria-describedby="book-id-help book-id-error"
+                                        class="form-control"
+                                        id="book-id"
+                                        name="book-id"
+                                        pattern="BK[0-9]{3}"
+                                        placeholder="BK007"
+                                        required=""
+                                        type="text"
+                                    />
+                                    <div class="form-text" id="book-id-help">
+                                        Use BK followed by three digits, for example BK007.
+                                    </div>
+                                    <div class="invalid-feedback" id="book-id-error">
+                                        Use BK followed by three digits, for example BK007.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="book-title">
+                                        Book title *
+                                    </label>
+                                    <input
+                                        aria-describedby="book-title-error"
+                                        class="form-control"
+                                        id="book-title"
+                                        maxlength="120"
+                                        name="book-title"
+                                        pattern=".*\S.*"
+                                        required=""
+                                        type="text"
+                                    />
+                                    <div class="invalid-feedback" id="book-title-error">
+                                        Please enter book title.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="book-author">
+                                        Author *
+                                    </label>
+                                    <input
+                                        aria-describedby="book-author-error"
+                                        class="form-control"
+                                        id="book-author"
+                                        maxlength="80"
+                                        name="book-author"
+                                        pattern=".*\S.*"
+                                        required=""
+                                        type="text"
+                                    />
+                                    <div class="invalid-feedback" id="book-author-error">
+                                        Please enter author.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="book-category">
+                                        Category
+                                    </label>
+                                    <select class="form-select" id="book-category" name="book-category">
+                                        <option value="Computing">
+                                            Computing
+                                        </option>
+                                        <option value="Mathematics">
+                                            Mathematics
+                                        </option>
+                                        <option value="Study skills">
+                                            Study skills
+                                        </option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select an option.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="book-status">
+                                        Status
+                                    </label>
+                                    <select class="form-select" id="book-status" name="book-status">
+                                        <option value="Available">
+                                            Available
+                                        </option>
+                                        <option value="Borrowed">
+                                            Borrowed
+                                        </option>
+                                        <option value="Overdue">
+                                            Overdue
+                                        </option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select an option.
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex gap-2">
+                                    <button class="btn btn-danger" type="submit">
+                                        Add book
+                                    </button>
+                                    <button class="btn btn-outline-secondary" type="reset">
+                                        Reset
+                                    </button>
+                                </div>
+                                <p class="form-status col-12 mb-0" id="book-message" role="status">
+                                </p>
+                            </form>
+                            <p class="small text-secondary mt-3">
+                                Records are kept in this page while it is open. Refreshing or leaving the page
+                                restores the original sample records.
+                            </p>
+                        </div>
+                    </section>
+                </div>
             </div>
         </main>
-        <!-- 4. Website footer -->
-        <footer>
-            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
-            <p>Library Management System - Student Project</p>
+        <footer class="border-top bg-white py-3 mt-4">
+            <div class="container">
+                <p class="mb-1">
+                    Red Team | Sultan Qaboos University | COMP3700 | Fall 2026
+                </p>
+                <p class="small text-secondary mb-0">
+                    Library Management System · Student Project
+                </p>
+            </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+        </script>
+        <script src="js/data.js">
+        </script>
+        <script src="js/catalog.js">
+        </script>
     </body>
 </html>
