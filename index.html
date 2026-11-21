@@ -1,93 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Home - Library Management System</title>
-        <!-- External CSS: the same file is linked from every page. -->
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <title>
+            Home - Library Management System
+        </title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
     </head>
-    <body>
-        <!-- 1. Website header -->
-        <header>
-            <a href="index.html">
-                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
-            </a>
-            <h1>Library Management System</h1>
-            <p>Red Team - COMP3700</p>
-        </header>
-        <!-- 2. Navigation: all pages use the same links. -->
-        <nav aria-label="Main navigation">
-            <ul>
-                <li>
-                    <a href="index.html" class="current">Home</a>
-                </li>
-                <li>
-                    <a href="catalog.html">Book Catalog</a>
-                </li>
-                <li>
-                    <a href="book-details.html">Book Details</a>
-                </li>
-                <li>
-                    <a href="manage-books.html">Manage Books</a>
-                </li>
-                <li>
-                    <a href="borrow-return.html">Borrow and Return</a>
-                </li>
-                <li>
-                    <a href="members.html">Members</a>
-                </li>
-                <li>
-                    <a href="dashboard.html">Dashboard</a>
-                </li>
-                <li>
-                    <a href="login.html">Login</a>
-                </li>
-                <li>
-                    <a href="about.html">About Us</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact Us</a>
-                </li>
-            </ul>
-        </nav>
-        <!-- 3. Page content -->
-        <main id="main-content">
-            <h2>Home</h2>
-            <p class="introduction">Welcome to our Library Management System. This website is a course project by Red Team. It helps visitors view books and see examples of library services.</p>
-            <h3>What can you find here?</h3>
-            <ul>
-                <li>A catalog with book titles, authors, and availability.</li>
-                <li>Forms for book records, borrowing, and member registration.</li>
-                <li>Tables showing example library records.</li>
-            </ul>
-            <h3>Some books in our collection</h3>
-            <div class="book-pictures">
-                <a href="book-details.html#BK001">
-                    <img src="images/web.svg" alt="Foundations of Web Design book cover" width="300" height="410"/>
+    <body class="bg-light">
+        <a class="visually-hidden-focusable" href="#main-content">
+            Skip to content
+        </a>
+        <header class="bg-white border-bottom py-3">
+            <div class="container d-flex align-items-center gap-3">
+                <a href="index.html">
+                    <img
+                        alt="Library home"
+                        class="object-fit-contain"
+                        height="50"
+                        src="images/logo.png"
+                        width="92"
+                    />
                 </a>
-                <a href="book-details.html#BK003">
-                    <img src="images/databases.svg" alt="A Practical Guide to Databases book cover" width="300" height="410"/>
-                </a>
-                <a href="book-details.html#BK004">
-                    <img src="images/calculus.svg" alt="Calculus for Everyday Problems book cover" width="300" height="410"/>
-                </a>
+                <div>
+                    <p class="fs-4 mb-0">
+                        Library Management System
+                    </p>
+                    <p class="text-secondary mb-0">
+                        Red Team · COMP3700
+                    </p>
+                </div>
             </div>
-            <p>
-                <a href="catalog.html">View the full book catalog</a>
-            </p>
-            <h3>How to use the website</h3>
-            <ol>
-                <li>Open the book catalog.</li>
-                <li>Choose a book and read its details.</li>
-                <li>Open the borrowing form to try a sample request.</li>
-            </ol>
-            <p class="note">This Part II website uses HTML and CSS only. Books and member records are fictional examples. Forms do not update the tables.</p>
+        </header>
+        <nav aria-label="Main navigation" class="navbar navbar-expand-xl bg-dark" data-bs-theme="dark">
+            <div class="container">
+                <span class="navbar-brand d-xl-none">
+                    Menu
+                </span>
+                <button
+                    aria-controls="main-nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#main-nav"
+                    data-bs-toggle="collapse"
+                    type="button"
+                >
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="navbar-nav gap-xl-2">
+                        <li>
+                            <a aria-current="page" class="nav-link active" href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="catalog.html">
+                                Book Catalog
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="members.html">
+                                Members
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="questionnaire.html">
+                                Questionnaire
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="calculate.html">
+                                Calculator
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="funpage.html">
+                                Book Game
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button
+                                aria-expanded="false"
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                type="button"
+                            >
+                                More
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="book-details.html">
+                                        Book Details
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="manage-books.html">
+                                        Manage Books
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="borrow-return.html">
+                                        Borrow and Return
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="dashboard.html">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="login.html">
+                                        Login
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="about.html">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="contact.html">
+                                        Contact Us
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="container py-4" id="main-content">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="row align-items-center g-4 mb-4">
+                        <div class="col-lg-5">
+                            <h1 class="h2">
+                                Welcome to our library
+                            </h1>
+                            <p>
+                                Browse the books, try our library forms, and explore the new activities. This
+                                website is our COMP3700 project.
+                            </p>
+                            <a class="btn btn-danger" href="catalog.html">
+                                Browse the catalog
+                            </a>
+                            <a class="btn btn-outline-secondary ms-2" href="members.html">
+                                View members
+                            </a>
+                        </div>
+                        <div class="col-lg-7">
+                            <div
+                                aria-label="Library photo gallery"
+                                class="carousel slide"
+                                data-bs-interval="4000"
+                                data-bs-pause="hover"
+                                data-bs-ride="carousel"
+                                id="library-gallery"
+                            >
+                                <div class="carousel-inner rounded">
+                                    <div class="carousel-item active">
+                                        <div class="ratio ratio-21x9">
+                                            <img
+                                                alt="Bookshelves in a library"
+                                                class="w-100 h-100 object-fit-cover"
+                                                src="images/library-shelves.jpg"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="ratio ratio-21x9">
+                                            <img
+                                                alt="Library reading room and shelves"
+                                                class="w-100 h-100 object-fit-cover"
+                                                src="images/library-room.jpg"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="ratio ratio-21x9">
+                                            <img
+                                                alt="Books arranged on a shelf"
+                                                class="w-100 h-100 object-fit-cover"
+                                                src="images/library-books.jpg"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <button
+                                    class="carousel-control-prev"
+                                    data-bs-slide="prev"
+                                    data-bs-target="#library-gallery"
+                                    type="button"
+                                >
+                                    <span aria-hidden="true" class="carousel-control-prev-icon">
+                                    </span>
+                                    <span class="visually-hidden">
+                                        Previous photo
+                                    </span>
+                                </button>
+                                <button
+                                    class="carousel-control-next"
+                                    data-bs-slide="next"
+                                    data-bs-target="#library-gallery"
+                                    type="button"
+                                >
+                                    <span aria-hidden="true" class="carousel-control-next-icon">
+                                    </span>
+                                    <span class="visually-hidden">
+                                        Next photo
+                                    </span>
+                                </button>
+                            </div>
+                            <p class="small text-secondary mt-2 mb-0">
+                                Library photo gallery · Photos change every four seconds.
+                            </p>
+                        </div>
+                    </div>
+                    <h2 class="h4 mb-3">
+                        Try something new
+                    </h2>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h3 class="h5">
+                                        Questionnaire
+                                    </h3>
+                                    <p>
+                                        Share your opinion about our library website.
+                                    </p>
+                                    <a class="btn btn-outline-danger" href="questionnaire.html">
+                                        Give feedback
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h3 class="h5">
+                                        Fee calculator
+                                    </h3>
+                                    <p>
+                                        Work out sample overdue fines and printing costs.
+                                    </p>
+                                    <a class="btn btn-outline-danger" href="calculate.html">
+                                        Calculate fees
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h3 class="h5">
+                                        Book sorting game
+                                    </h3>
+                                    <p>
+                                        Can you put all six books on the correct shelves?
+                                    </p>
+                                    <a class="btn btn-outline-danger" href="funpage.html">
+                                        Play the game
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        <section class="col-md-6">
+                            <h2 class="h5">
+                                What can you find here?
+                            </h2>
+                            <ul>
+                                <li>
+                                    A catalog with book titles, authors, and availability.
+                                </li>
+                                <li>
+                                    Forms for book records, borrowing, and member registration.
+                                </li>
+                                <li>
+                                    Tables showing example library records.
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="col-md-6">
+                            <h2 class="h5">
+                                How to use the website
+                            </h2>
+                            <ol>
+                                <li>
+                                    Open the book catalog.
+                                </li>
+                                <li>
+                                    Choose a book and read its details.
+                                </li>
+                                <li>
+                                    Open the borrowing form to try a sample request.
+                                </li>
+                            </ol>
+                        </section>
+                    </div>
+                    <p class="small text-secondary">
+                        Books and member records are fictional examples for the project.
+                    </p>
+                   <div class="border rounded bg-white p-3">
+                        <div class="overflow-hidden text-nowrap" id="welcome-banner">
+                            <span class="d-inline-block w-100"></span>
+                            <span id="welcome-text"></span>
+                            <span class="d-inline-block w-100"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
-        <!-- 4. Website footer -->
-        <footer>
-            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
-            <p>Library Management System - Student Project</p>
+        <footer class="border-top bg-white py-3 mt-4">
+            <div class="container">
+                <p class="mb-1">
+                    Red Team | Sultan Qaboos University | COMP3700 | Fall 2026
+                </p>
+                <p class="small text-secondary mb-0">
+                    Library Management System · Student Project
+                </p>
+            </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+        </script>
+        <script src="js/home.js">
+        </script>
     </body>
 </html>
