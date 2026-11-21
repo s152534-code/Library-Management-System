@@ -1,165 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Borrow and Return - Library Management System</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <title>
+            Borrow and Return - Library Management System
+        </title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
     </head>
-    <body>
-        <header>
-            <a href="index.html">
-                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
-            </a>
-            <h1>Library Management System</h1>
-            <p>Red Team - COMP3700</p>
+    <body class="bg-light">
+        <a class="visually-hidden-focusable" href="#main-content">
+            Skip to content
+        </a>
+        <header class="bg-white border-bottom py-3">
+            <div class="container d-flex align-items-center gap-3">
+                <a href="index.html">
+                    <img
+                        alt="Library home"
+                        class="object-fit-contain"
+                        height="50"
+                        src="images/logo.png"
+                        width="92"
+                    />
+                </a>
+                <div>
+                    <p class="fs-4 mb-0">
+                        Library Management System
+                    </p>
+                    <p class="text-secondary mb-0">
+                        Red Team · COMP3700
+                    </p>
+                </div>
+            </div>
         </header>
-        <nav aria-label="Main navigation">
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="catalog.html">Book Catalog</a>
-                </li>
-                <li>
-                    <a href="book-details.html">Book Details</a>
-                </li>
-                <li>
-                    <a href="manage-books.html">Manage Books</a>
-                </li>
-                <li>
-                    <a href="borrow-return.html" class="current" aria-current="page">Borrow and Return</a>
-                </li>
-                <li>
-                    <a href="members.html">Members</a>
-                </li>
-                <li>
-                    <a href="dashboard.html">Dashboard</a>
-                </li>
-                <li>
-                    <a href="login.html">Login</a>
-                </li>
-                <li>
-                    <a href="about.html">About Us</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact Us</a>
-                </li>
-            </ul>
+        <nav aria-label="Main navigation" class="navbar navbar-expand-xl bg-dark" data-bs-theme="dark">
+            <div class="container">
+                <span class="navbar-brand d-xl-none">
+                    Menu
+                </span>
+                <button
+                    aria-controls="main-nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#main-nav"
+                    data-bs-toggle="collapse"
+                    type="button"
+                >
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="navbar-nav gap-xl-2">
+                        <li>
+                            <a class="nav-link" href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="catalog.html">
+                                Book Catalog
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="members.html">
+                                Members
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="questionnaire.html">
+                                Questionnaire
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="calculate.html">
+                                Calculator
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="funpage.html">
+                                Book Game
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button
+                                aria-expanded="false"
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                type="button"
+                            >
+                                More
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="book-details.html">
+                                        Book Details
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="manage-books.html">
+                                        Manage Books
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        aria-current="page"
+                                        class="dropdown-item active"
+                                        href="borrow-return.html"
+                                    >
+                                        Borrow and Return
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="dashboard.html">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="login.html">
+                                        Login
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="about.html">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="contact.html">
+                                        Contact Us
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <main id="main-content">
-            <h2>Borrow and Return</h2>
-            <p>Members can use this example form to request a book loan or record a return.</p>
-            <form action="https://httpbin.org/get" method="get" target="_blank" rel="noopener">
-                <input type="hidden" name="form_type" value="borrowing"/>
-                <fieldset>
-                    <legend>Transaction details</legend>
-                    <div class="choices">
-                        <label>
-                            <input type="radio" name="transaction" value="borrow" checked="checked"/> Borrow</label>
-                        <label>
-                            <input type="radio" name="transaction" value="return"/> Return</label>
+        <main class="container py-4" id="main-content">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h1 class="h2 mb-3">
+                        Borrow and Return
+                    </h1>
+                    <p>
+                        Members can use this example form to request a book loan or record a return.
+                    </p>
+                    <form
+                        class="was-validated border rounded bg-white p-3 mb-3"
+                        id="loan-form"
+                        onreset="resetLoan()"
+                        onsubmit="return checkLoan()"
+                    >
+                        <fieldset class="row g-3 mb-3">
+                            <legend class="h5">
+                                Transaction details
+                            </legend>
+                            <div class="col-12">
+                                <label class="form-check-label d-block mb-2">
+                                    <input
+                                        checked="checked"
+                                        class="form-check-input me-1"
+                                        id="borrow-choice"
+                                        name="transaction"
+                                        onclick="changeTransaction()"
+                                        type="radio"
+                                        value="borrow"
+                                    />
+                                    <span class="invalid-feedback">
+                                        Please check this field.
+                                    </span>
+                                    Borrow
+                                </label>
+                                <label class="form-check-label d-block mb-2">
+                                    <input
+                                        class="form-check-input me-1"
+                                        id="return-choice"
+                                        name="transaction"
+                                        onclick="changeTransaction()"
+                                        type="radio"
+                                        value="return"
+                                    />
+                                    <span class="invalid-feedback">
+                                        Please check this field.
+                                    </span>
+                                    Return
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="member_id">
+                                    Member
+                                </label>
+                                <select
+                                    aria-describedby="member_id-error"
+                                    class="form-select"
+                                    id="member_id"
+                                    name="member_id"
+                                >
+                                    <option value="MB001">
+                                        MB001 - Demo Member 01
+                                    </option>
+                                    <option value="MB002">
+                                        MB002 - Demo Member 02
+                                    </option>
+                                    <option value="MB003">
+                                        MB003 - Demo Member 03
+                                    </option>
+                                </select>
+                                <div class="invalid-feedback" id="member_id-error">
+                                    Please check this field.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="book_id">
+                                    Book
+                                </label>
+                                <select
+                                    aria-describedby="book_id-error"
+                                    class="form-select"
+                                    id="book_id"
+                                    name="book_id"
+                                >
+                                    <option value="BK001">
+                                        BK001 - Foundations of Web Design
+                                    </option>
+                                    <option value="BK002">
+                                        BK002 - Java Programming Essentials
+                                    </option>
+                                    <option value="BK003">
+                                        BK003 - A Practical Guide to Databases
+                                    </option>
+                                    <option value="BK004">
+                                        BK004 - Calculus for Everyday Problems
+                                    </option>
+                                    <option value="BK005">
+                                        BK005 - Understanding Computer Systems
+                                    </option>
+                                    <option value="BK006">
+                                        BK006 - Research and Academic Writing
+                                    </option>
+                                </select>
+                                <div class="invalid-feedback" id="book_id-error">
+                                    Please check this field.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="transaction_date">
+                                    Transaction date *
+                                </label>
+                                <input
+                                    aria-describedby="transaction_date-error"
+                                    class="form-control"
+                                    id="transaction_date"
+                                    name="transaction_date"
+                                    required="required"
+                                    type="date"
+                                />
+                                <div class="invalid-feedback" id="transaction_date-error">
+                                    Please check this field.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="due_date">
+                                    Due date for a new loan
+                                </label>
+                                <input
+                                    aria-describedby="due_date-error"
+                                    class="form-control"
+                                    id="due_date"
+                                    name="due_date"
+                                    required=""
+                                    type="date"
+                                />
+                                <div class="invalid-feedback" id="due_date-error">
+                                    Please check this field.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="notes">
+                                    Notes
+                                </label>
+                                <textarea
+                                    aria-describedby="notes-error"
+                                    class="form-control"
+                                    id="notes"
+                                    name="notes"
+                                    rows="4"
+                                ></textarea>
+                                <div class="invalid-feedback" id="notes-error">
+                                    Please check this field.
+                                </div>
+                            </div>
+                        </fieldset>
+                        <p>
+                            <input class="btn btn-danger" type="submit" value="Submit Request"/>
+                            <input class="btn btn-outline-secondary" type="reset" value="Reset"/>
+                        </p>
+                        <p class="small text-secondary">
+                            This is a sample form. It checks your entries on this page and does not save or
+                            send them.
+                        </p>
+                        <p class="form-status mb-0" id="loan-message" role="status">
+                        </p>
+                    </form>
+                    <p>
+                        For a return request, leave the due date empty. For a new loan, choose a due date
+                        after the borrowing date.
+                    </p>
+                    <h3 class="h5 mt-4">
+                        Borrowing steps
+                    </h3>
+                    <ol>
+                        <li>
+                            Choose an available book.
+                        </li>
+                        <li>
+                            Use an active member ID.
+                        </li>
+                        <li>
+                            Request a 14-day loan and return the book on time.
+                        </li>
+                    </ol>
+                    <p>
+                        These are sample project rules, not official university library policies.
+                    </p>
+                    <h3 class="h5 mt-4">
+                        Sample borrowing records
+                    </h3>
+                    <div aria-label="Borrowing records" class="table-responsive" role="region" tabindex="0">
+                        <table class="table table-bordered align-middle">
+                            <caption>
+                                Active loans on 22 October 2026
+                            </caption>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2" scope="col">
+                                        Loan ID
+                                    </th>
+                                    <th rowspan="2" scope="col">
+                                        Book ID
+                                    </th>
+                                    <th rowspan="2" scope="col">
+                                        Member
+                                    </th>
+                                    <th colspan="2" scope="colgroup">
+                                        Dates
+                                    </th>
+                                    <th rowspan="2" scope="col">
+                                        Status
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">
+                                        Borrowed
+                                    </th>
+                                    <th scope="col">
+                                        Due
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        LN001
+                                    </th>
+                                    <td>
+                                        <a href="book-details.html#BK002">
+                                            BK002
+                                        </a>
+                                    </td>
+                                    <td>
+                                        MB001
+                                    </td>
+                                    <td>
+                                        15 Oct 2026
+                                    </td>
+                                    <td>
+                                        29 Oct 2026
+                                    </td>
+                                    <td>
+                                        Borrowed
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        LN002
+                                    </th>
+                                    <td>
+                                        <a href="book-details.html#BK005">
+                                            BK005
+                                        </a>
+                                    </td>
+                                    <td>
+                                        MB002
+                                    </td>
+                                    <td>
+                                        01 Oct 2026
+                                    </td>
+                                    <td>
+                                        15 Oct 2026
+                                    </td>
+                                    <td>
+                                        Overdue
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="5" scope="row">
+                                        Total active loans, including overdue loans
+                                    </th>
+                                    <td>
+                                        2
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
-                    <p>
-                        <label for="member_id">Member</label>
-                        <select id="member_id" name="member_id">
-                            <option value="MB001">MB001 - Demo Member 01</option>
-                            <option value="MB002">MB002 - Demo Member 02</option>
-                            <option value="MB003">MB003 - Demo Member 03</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="book_id">Book</label>
-                        <select id="book_id" name="book_id">
-                            <option value="BK001">BK001 - Foundations of Web Design</option>
-                            <option value="BK002">BK002 - Java Programming Essentials</option>
-                            <option value="BK003">BK003 - A Practical Guide to Databases</option>
-                            <option value="BK004">BK004 - Calculus for Everyday Problems</option>
-                            <option value="BK005">BK005 - Understanding Computer Systems</option>
-                            <option value="BK006">BK006 - Research and Academic Writing</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="transaction_date">Transaction date *</label>
-                        <input type="date" id="transaction_date" name="transaction_date" required="required" value="2026-10-21"/>
-                    </p>
-                    <p>
-                        <label for="due_date">Due date for a new loan</label>
-                        <input type="date" id="due_date" name="due_date"/>
-                    </p>
-                    <p>
-                        <label for="notes">Notes</label>
-                        <textarea id="notes" name="notes" rows="4" cols="40"></textarea>
-                    </p>
-                </fieldset>
-                <p>
-                    <input class="button" type="submit" value="Submit Request"/>
-                    <input class="button" type="reset" value="Reset"/>
-                </p>
-                <p class="note">This is a practice form. Use fictional data only. 
-                The values are sent to httpbin in a new tab and are not saved in this website.</p>
-            </form>
-            <p>For a return request, leave the due date empty. For a new loan, choose a due date after the borrowing date.</p>
-            <h3>Borrowing steps</h3>
-            <ol>
-                <li>Choose an available book.</li>
-                <li>Use an active member ID.</li>
-                <li>Request a 14-day loan and return the book on time.</li>
-            </ol>
-            <p>These are sample project rules, not official university library policies.</p>
-            <h3>Sample borrowing records</h3>
-            <div class="table-container" tabindex="0" role="region" aria-label="Borrowing records">
-                <table>
-                    <caption>Active loans on 22 October 2026</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col" rowspan="2">Loan ID</th>
-                            <th scope="col" rowspan="2">Book ID</th>
-                            <th scope="col" rowspan="2">Member</th>
-                            <th scope="colgroup" colspan="2">Dates</th>
-                            <th scope="col" rowspan="2">Status</th>
-                        </tr>
-                        <tr>
-                            <th scope="col">Borrowed</th>
-                            <th scope="col">Due</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">LN001</th>
-                            <td>
-                                <a href="book-details.html#BK002">BK002</a>
-                            </td>
-                            <td>MB001</td>
-                            <td>15 Oct 2026</td>
-                            <td>29 Oct 2026</td>
-                            <td>Borrowed</td>
-                        </tr>
-                        <tr class="alternate-row">
-                            <th scope="row">LN002</th>
-                            <td>
-                                <a href="book-details.html#BK005">BK005</a>
-                            </td>
-                            <td>MB002</td>
-                            <td>01 Oct 2026</td>
-                            <td>15 Oct 2026</td>
-                            <td>Overdue</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th scope="row" colspan="5">Total active loans, including overdue loans</th>
-                            <td>2</td>
-                        </tr>
-                    </tfoot>
-                </table>
+                </div>
             </div>
         </main>
-        <footer>
-            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
-            <p>Library Management System - Student Project</p>
+        <footer class="border-top bg-white py-3 mt-4">
+            <div class="container">
+                <p class="mb-1">
+                    Red Team | Sultan Qaboos University | COMP3700 | Fall 2026
+                </p>
+                <p class="small text-secondary mb-0">
+                    Library Management System · Student Project
+                </p>
+            </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+        </script>
+        <script src="js/loans.js">
+        </script>
     </body>
 </html>
-
