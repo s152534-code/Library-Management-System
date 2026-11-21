@@ -1,1 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <title>
+            Questionnaire - Library Management System
+        </title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="bg-light">
+        <a class="visually-hidden-focusable" href="#main-content">
+            Skip to content
+        </a>
+        <header class="bg-white border-bottom py-3">
+            <div class="container d-flex align-items-center gap-3">
+                <a href="index.html">
+                    <img
+                        alt="Library home"
+                        class="object-fit-contain"
+                        height="50"
+                        src="images/logo.png"
+                        width="92"
+                    />
+                </a>
+                <div>
+                    <p class="fs-4 mb-0">
+                        Library Management System
+                    </p>
+                    <p class="text-secondary mb-0">
+                        Red Team · COMP3700
+                    </p>
+                </div>
+            </div>
+        </header>
+        <nav aria-label="Main navigation" class="navbar navbar-expand-xl bg-dark" data-bs-theme="dark">
+            <div class="container">
+                <span class="navbar-brand d-xl-none">
+                    Menu
+                </span>
+                <button
+                    aria-controls="main-nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#main-nav"
+                    data-bs-toggle="collapse"
+                    type="button"
+                >
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="navbar-nav gap-xl-2">
+                        <li>
+                            <a class="nav-link" href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="catalog.html">
+                                Book Catalog
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="members.html">
+                                Members
+                            </a>
+                        </li>
+                        <li>
+                            <a aria-current="page" class="nav-link active" href="questionnaire.html">
+                                Questionnaire
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="calculate.html">
+                                Calculator
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="funpage.html">
+                                Book Game
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button
+                                aria-expanded="false"
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                type="button"
+                            >
+                                More
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="book-details.html">
+                                        Book Details
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="manage-books.html">
+                                        Manage Books
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="borrow-return.html">
+                                        Borrow and Return
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="dashboard.html">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="login.html">
+                                        Login
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="about.html">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="contact.html">
+                                        Contact Us
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="container py-4" id="main-content">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h1 class="h2">
+                        Library Questionnaire
+                    </h1>
+                    <p>
+                        Tell us what you think about the website and library services. Fields marked * are
+                        required.
+                    </p>
+                    <div class="card">
+                        <div class="card-body">
+                            <form
+                                class="row g-3"
+                                id="questionnaire-form"
+                                novalidate=""
+                                onreset="resetQuestionnaire()"
+                                onsubmit="return checkQuestionnaire()"
+                            >
+                                <div class="col-md-6">
+                                    <label class="form-label" for="reader-name">
+                                        Full name *
+                                    </label>
+                                    <input
+                                        aria-describedby="reader-name-help reader-name-error"
+                                        class="form-control"
+                                        id="reader-name"
+                                        maxlength="80"
+                                        name="reader-name"
+                                        pattern="[A-Za-z]+(['\-][A-Za-z]+)*( +[A-Za-z]+(['\-][A-Za-z]+)*)+"
+                                        required=""
+                                        type="text"
+                                    />
+                                    <div class="form-text" id="reader-name-help">
+                                        Use at least two names in English. Hyphens and apostrophes are
+                                        allowed.
+                                    </div>
+                                    <div class="invalid-feedback" id="reader-name-error">
+                                        Use at least two names in English. Hyphens and apostrophes are
+                                        allowed.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="reader-id">
+                                        Member ID *
+                                    </label>
+                                    <input
+                                        aria-describedby="reader-id-help reader-id-error"
+                                        class="form-control"
+                                        id="reader-id"
+                                        maxlength="5"
+                                        name="reader-id"
+                                        pattern="MB[0-9]{3}"
+                                        placeholder="MB001"
+                                        required=""
+                                        type="text"
+                                    />
+                                    <div class="form-text" id="reader-id-help">
+                                        Use MB followed by three digits, for example MB001.
+                                    </div>
+                                    <div class="invalid-feedback" id="reader-id-error">
+                                        Use MB followed by three digits, for example MB001.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="reader-phone">
+                                        Mobile number *
+                                    </label>
+                                    <input
+                                        aria-describedby="reader-phone-help reader-phone-error"
+                                        class="form-control"
+                                        id="reader-phone"
+                                        maxlength="15"
+                                        name="reader-phone"
+                                        pattern="(\+968[ \-]?)?[279][0-9]{7}"
+                                        placeholder="+968 91234567"
+                                        required=""
+                                        type="tel"
+                                    />
+                                    <div class="form-text" id="reader-phone-help">
+                                        Enter eight digits starting with 2 or 7 or 9. You may add +968.
+                                    </div>
+                                    <div class="invalid-feedback" id="reader-phone-error">
+                                        Enter eight digits starting with 2 or 7 or 9. You may add +968.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="reader-email">
+                                        Email *
+                                    </label>
+                                    <input
+                                        aria-describedby="reader-email-error"
+                                        class="form-control"
+                                        id="reader-email"
+                                        maxlength="100"
+                                        name="reader-email"
+                                        pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                                        required=""
+                                        type="email"
+                                    />
+                                    <div class="invalid-feedback" id="reader-email-error">
+                                        Please enter email.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="visit-frequency">
+                                        How often do you visit?
+                                    </label>
+                                    <select class="form-select" id="visit-frequency" name="visit-frequency">
+                                        <option value="Every week">
+                                            Every week
+                                        </option>
+                                        <option value="Every month">
+                                            Every month
+                                        </option>
+                                        <option value="Occasionally">
+                                            Occasionally
+                                        </option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select an option.
+                                    </div>
+                                </div>
+                                <fieldset class="col-md-6">
+                                    <legend class="fs-6">
+                                        How was your experience? *
+                                    </legend>
+                                    <div class="form-check form-check-inline">
+                                        <input
+                                            class="form-check-input"
+                                            id="rating-good"
+                                            name="rating"
+                                            required=""
+                                            type="radio"
+                                            value="Good"
+                                        />
+                                        <label class="form-check-label" for="rating-good">
+                                            Good
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input
+                                            class="form-check-input"
+                                            id="rating-average"
+                                            name="rating"
+                                            required=""
+                                            type="radio"
+                                            value="Average"
+                                        />
+                                        <label class="form-check-label" for="rating-average">
+                                            Average
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input
+                                            class="form-check-input"
+                                            id="rating-poor"
+                                            name="rating"
+                                            required=""
+                                            type="radio"
+                                            value="Poor"
+                                        />
+                                        <label class="form-check-label" for="rating-poor">
+                                            Poor
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Choose a rating.
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class="col-12">
+                                    <label class="form-label" for="reader-comments">
+                                        What could we improve? *
+                                    </label>
+                                    <textarea
+                                        aria-describedby="comments-help"
+                                        class="form-control"
+                                        id="reader-comments"
+                                        maxlength="500"
+                                        minlength="20"
+                                        required=""
+                                        rows="3"
+                                    ></textarea>
+                                    <div class="form-text" id="comments-help">
+                                        Write 20 to 500 characters.
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Write at least 20 characters.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            id="reader-consent"
+                                            required=""
+                                            type="checkbox"
+                                        />
+                                        <label class="form-check-label" for="reader-consent">
+                                            I am using sample details for this course project. *
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Please confirm before submitting.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex gap-2">
+                                    <button class="btn btn-danger" type="submit">
+                                        Submit feedback
+                                    </button>
+                                    <button class="btn btn-outline-secondary" type="reset">
+                                        Reset
+                                    </button>
+                                </div>
+                                <p class="form-status col-12 mb-0" id="questionnaire-message" role="status">
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    <p class="small text-secondary mt-3">
+                        This demonstration validates your feedback locally. It does not send or store a
+                        response.
+                    </p>
+                </div>
+            </div>
+        </main>
+        <footer class="border-top bg-white py-3 mt-4">
+            <div class="container">
+                <p class="mb-1">
+                    Red Team | Sultan Qaboos University | COMP3700 | Fall 2026
+                </p>
+                <p class="small text-secondary mb-0">
+                    Library Management System · Student Project
+                </p>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+        </script>
+        <script src="js/questionnaire.js">
+        </script>
+    </body>
+</html>
 
