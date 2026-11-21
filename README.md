@@ -24,11 +24,3 @@ Records stay in JavaScript arrays only while their page remains open. Refreshing
 ## GitHub Pages
 - Repository: https://github.com/s152534-code/Library-Management-System
 - Website: https://s152534-code.github.io/Library-Management-System/index.html
-
-## Photo credits
-Gallery images are from Unsplash under the Unsplash License (https://unsplash.com/license):
-- library-shelves.jpg: Daniel Forsman, https://unsplash.com/photos/PaAY4tUdSQI
-- library-room.jpg: Denise Jans, https://unsplash.com/photos/Ud5MFQQV1F8
-- library-books.jpg: Jamie Taylor, https://unsplash.com/photos/-9C3TMXwQjQ
-
-Book-cover illustrations, gallery photos and the logo are retained from the previous version.
