@@ -1,146 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Book Details - Library Management System</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <title>
+            Book Details - Library Management System
+        </title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
     </head>
-    <body>
-        <!-- 1. Website header -->
-        <header>
-            <a href="index.html">
-                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
-            </a>
-            <h1>Library Management System</h1>
-            <p>Red Team - COMP3700</p>
+    <body class="bg-light">
+        <a class="visually-hidden-focusable" href="#main-content">
+            Skip to content
+        </a>
+        <header class="bg-white border-bottom py-3">
+            <div class="container d-flex align-items-center gap-3">
+                <a href="index.html">
+                    <img
+                        alt="Library home"
+                        class="object-fit-contain"
+                        height="50"
+                        src="images/logo.png"
+                        width="92"
+                    />
+                </a>
+                <div>
+                    <p class="fs-4 mb-0">
+                        Library Management System
+                    </p>
+                    <p class="text-secondary mb-0">
+                        Red Team · COMP3700
+                    </p>
+                </div>
+            </div>
         </header>
-        <!-- 2. Navigation: all pages use the same links. -->
-        <nav aria-label="Main navigation">
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="catalog.html">Book Catalog</a>
-                </li>
-                <li>
-                    <a href="book-details.html" class="current" aria-current="page">Book Details</a>
-                </li>
-                <li>
-                    <a href="manage-books.html">Manage Books</a>
-                </li>
-                <li>
-                    <a href="borrow-return.html">Borrow and Return</a>
-                </li>
-                <li>
-                    <a href="members.html">Members</a>
-                </li>
-                <li>
-                    <a href="dashboard.html">Dashboard</a>
-                </li>
-                <li>
-                    <a href="login.html">Login</a>
-                </li>
-                <li>
-                    <a href="about.html">About Us</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact Us</a>
-                </li>
-            </ul>
+        <nav aria-label="Main navigation" class="navbar navbar-expand-xl bg-dark" data-bs-theme="dark">
+            <div class="container">
+                <span class="navbar-brand d-xl-none">
+                    Menu
+                </span>
+                <button
+                    aria-controls="main-nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#main-nav"
+                    data-bs-toggle="collapse"
+                    type="button"
+                >
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="navbar-nav gap-xl-2">
+                        <li>
+                            <a class="nav-link" href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="catalog.html">
+                                Book Catalog
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="members.html">
+                                Members
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="questionnaire.html">
+                                Questionnaire
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="calculate.html">
+                                Calculator
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="funpage.html">
+                                Book Game
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button
+                                aria-expanded="false"
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                type="button"
+                            >
+                                More
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a
+                                        aria-current="page"
+                                        class="dropdown-item active"
+                                        href="book-details.html"
+                                    >
+                                        Book Details
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="manage-books.html">
+                                        Manage Books
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="borrow-return.html">
+                                        Borrow and Return
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="dashboard.html">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="login.html">
+                                        Login
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="about.html">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="contact.html">
+                                        Contact Us
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <!-- 3. Page content -->
-        <main id="main-content">
-            <h2>Book Details</h2>
-            <p>These book descriptions are fictional examples for the project.</p>
-            <section class="book-section" id="BK001">
-                <img src="images/web.svg" alt="Foundations of Web Design cover" width="300" height="410"/>
-                <h3>BK001 - Foundations of Web Design</h3>
-                <p>
-                    <strong>Author:</strong> Maya Reed</p>
-                <p>
-                    <strong>Category:</strong> Computing | <strong>Year:</strong> 2024</p>
-                <p>
-                    <strong>Shelf:</strong> C-01 | <strong>Status:</strong> Available</p>
-                <p>An introduction to HTML, CSS, forms, and website layout.</p>
-                <p>
-                    <a href="borrow-return.html">Open the borrowing form</a> and choose BK001.</p>
-            </section>
-            <section class="book-section" id="BK002">
-                <img src="images/java.svg" alt="Java Programming Essentials cover" width="300" height="410"/>
-                <h3>BK002 - Java Programming Essentials</h3>
-                <p>
-                    <strong>Author:</strong> Omar Hale</p>
-                <p>
-                    <strong>Category:</strong> Computing | <strong>Year:</strong> 2023</p>
-                <p>
-                    <strong>Shelf:</strong> C-02 | <strong>Status:</strong> Borrowed</p>
-                <p>Basic Java topics such as objects, arrays, and inheritance.</p>
-                <p>
-                    <a href="borrow-return.html">Open the borrowing form</a> and choose BK002.</p>
-            </section>
-            <section class="book-section" id="BK003">
-                <img src="images/databases.svg" alt="A Practical Guide to Databases cover" width="300" height="410"/>
-                <h3>BK003 - A Practical Guide to Databases</h3>
-                <p>
-                    <strong>Author:</strong> Nora Ellis</p>
-                <p>
-                    <strong>Category:</strong> Computing | <strong>Year:</strong> 2024</p>
-                <p>
-                    <strong>Shelf:</strong> C-03 | <strong>Status:</strong> Available</p>
-                <p>An introduction to tables, keys, and relationships in databases.</p>
-                <p>
-                    <a href="borrow-return.html">Open the borrowing form</a> and choose BK003.</p>
-            </section>
-            <section class="book-section" id="BK004">
-                <img src="images/calculus.svg" alt="Calculus for Everyday Problems cover" width="300" height="410"/>
-                <h3>BK004 - Calculus for Everyday Problems</h3>
-                <p>
-                    <strong>Author:</strong> Avery Cole</p>
-                <p>
-                    <strong>Category:</strong> Mathematics | <strong>Year:</strong> 2022</p>
-                <p>
-                    <strong>Shelf:</strong> M-01 | <strong>Status:</strong> Available</p>
-                <p>Practice topics about limits, derivatives, and integrals.</p>
-                <p>
-                    <a href="borrow-return.html">Open the borrowing form</a> and choose BK004.</p>
-            </section>
-            <section class="book-section" id="BK005">
-                <img src="images/systems.svg" alt="Understanding Computer Systems cover" width="300" height="410"/>
-                <h3>BK005 - Understanding Computer Systems</h3>
-                <p>
-                    <strong>Author:</strong> Sam Rowan</p>
-                <p>
-                    <strong>Category:</strong> Computing | <strong>Year:</strong> 2025</p>
-                <p>
-                    <strong>Shelf:</strong> C-04 | <strong>Status:</strong> Overdue</p>
-                <p>Basic ideas about computer memory and machine instructions.</p>
-                <p>
-                    <a href="borrow-return.html">Open the borrowing form</a> and choose BK005.</p>
-            </section>
-            <section class="book-section" id="BK006">
-                <img src="images/research.svg" alt="Research and Academic Writing cover" width="300" height="410"/>
-                <h3>BK006 - Research and Academic Writing</h3>
-                <p>
-                    <strong>Author:</strong> Lina Hart</p>
-                <p>
-                    <strong>Category:</strong> Study skills | <strong>Year:</strong> 2023</p>
-                <p>
-                    <strong>Shelf:</strong> S-01 | <strong>Status:</strong> Available</p>
-                <p>A guide to finding information and writing academic reports.</p>
-                <p>
-                    <a href="borrow-return.html">Open the borrowing form</a> and choose BK006.</p>
-            </section>
-            <p>
-                <a href="catalog.html">Back to the catalog</a>
-            </p>
+        <main class="container py-4" id="main-content">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h1 class="h2 mb-3">
+                        Book Details
+                    </h1>
+                    <p>
+                        These book descriptions are fictional examples for the project.
+                    </p>
+                    <section class="border rounded bg-white p-3 mb-3" id="BK001">
+                        <div class="row g-3">
+                            <div class="col-sm-3 col-lg-2">
+                                <img
+                                    alt="Foundations of Web Design cover"
+                                    class="img-fluid rounded"
+                                    height="246"
+                                    src="images/web.svg"
+                                    width="180"
+                                />
+                            </div>
+                            <div class="col-sm-9 col-lg-10">
+                                <h3 class="h5 mt-4">
+                                    BK001 - Foundations of Web Design
+                                </h3>
+                                <p>
+                                    <strong>
+                                        Author:
+                                    </strong>
+                                    Maya Reed
+                                </p>
+                                <p>
+                                    <strong>
+                                        Category:
+                                    </strong>
+                                    Computing |
+                                    <strong>
+                                        Year:
+                                    </strong>
+                                    2024
+                                </p>
+                                <p>
+                                    <strong>
+                                        Shelf:
+                                    </strong>
+                                    C-01 |
+                                    <strong>
+                                        Status:
+                                    </strong>
+                                    Available
+                                </p>
+                                <p>
+                                    An introduction to HTML, CSS, forms, and website layout.
+                                </p>
+                                <p>
+                                    <a href="borrow-return.html">
+                                        Open the borrowing form
+                                    </a>
+                                    and choose BK001.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="border rounded bg-white p-3 mb-3" id="BK002">
+                        <div class="row g-3">
+                            <div class="col-sm-3 col-lg-2">
+                                <img
+                                    alt="Java Programming Essentials cover"
+                                    class="img-fluid rounded"
+                                    height="246"
+                                    src="images/java.svg"
+                                    width="180"
+                                />
+                            </div>
+                            <div class="col-sm-9 col-lg-10">
+                                <h3 class="h5 mt-4">
+                                    BK002 - Java Programming Essentials
+                                </h3>
+                                <p>
+                                    <strong>
+                                        Author:
+                                    </strong>
+                                    Omar Hale
+                                </p>
+                                <p>
+                                    <strong>
+                                        Category:
+                                    </strong>
+                                    Computing |
+                                    <strong>
+                                        Year:
+                                    </strong>
+                                    2023
+                                </p>
+                                <p>
+                                    <strong>
+                                        Shelf:
+                                    </strong>
+                                    C-02 |
+                                    <strong>
+                                        Status:
+                                    </strong>
+                                    Borrowed
+                                </p>
+                                <p>
+                                    Basic Java topics such as objects, arrays, and inheritance.
+                                </p>
+                                <p>
+                                    <a href="borrow-return.html">
+                                        Open the borrowing form
+                                    </a>
+                                    and choose BK002.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="border rounded bg-white p-3 mb-3" id="BK003">
+                        <div class="row g-3">
+                            <div class="col-sm-3 col-lg-2">
+                                <img
+                                    alt="A Practical Guide to Databases cover"
+                                    class="img-fluid rounded"
+                                    height="246"
+                                    src="images/databases.svg"
+                                    width="180"
+                                />
+                            </div>
+                            <div class="col-sm-9 col-lg-10">
+                                <h3 class="h5 mt-4">
+                                    BK003 - A Practical Guide to Databases
+                                </h3>
+                                <p>
+                                    <strong>
+                                        Author:
+                                    </strong>
+                                    Nora Ellis
+                                </p>
+                                <p>
+                                    <strong>
+                                        Category:
+                                    </strong>
+                                    Computing |
+                                    <strong>
+                                        Year:
+                                    </strong>
+                                    2024
+                                </p>
+                                <p>
+                                    <strong>
+                                        Shelf:
+                                    </strong>
+                                    C-03 |
+                                    <strong>
+                                        Status:
+                                    </strong>
+                                    Available
+                                </p>
+                                <p>
+                                    An introduction to tables, keys, and relationships in databases.
+                                </p>
+                                <p>
+                                    <a href="borrow-return.html">
+                                        Open the borrowing form
+                                    </a>
+                                    and choose BK003.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="border rounded bg-white p-3 mb-3" id="BK004">
+                        <div class="row g-3">
+                            <div class="col-sm-3 col-lg-2">
+                                <img
+                                    alt="Calculus for Everyday Problems cover"
+                                    class="img-fluid rounded"
+                                    height="246"
+                                    src="images/calculus.svg"
+                                    width="180"
+                                />
+                            </div>
+                            <div class="col-sm-9 col-lg-10">
+                                <h3 class="h5 mt-4">
+                                    BK004 - Calculus for Everyday Problems
+                                </h3>
+                                <p>
+                                    <strong>
+                                        Author:
+                                    </strong>
+                                    Avery Cole
+                                </p>
+                                <p>
+                                    <strong>
+                                        Category:
+                                    </strong>
+                                    Mathematics |
+                                    <strong>
+                                        Year:
+                                    </strong>
+                                    2022
+                                </p>
+                                <p>
+                                    <strong>
+                                        Shelf:
+                                    </strong>
+                                    M-01 |
+                                    <strong>
+                                        Status:
+                                    </strong>
+                                    Available
+                                </p>
+                                <p>
+                                    Practice topics about limits, derivatives, and integrals.
+                                </p>
+                                <p>
+                                    <a href="borrow-return.html">
+                                        Open the borrowing form
+                                    </a>
+                                    and choose BK004.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="border rounded bg-white p-3 mb-3" id="BK005">
+                        <div class="row g-3">
+                            <div class="col-sm-3 col-lg-2">
+                                <img
+                                    alt="Understanding Computer Systems cover"
+                                    class="img-fluid rounded"
+                                    height="246"
+                                    src="images/systems.svg"
+                                    width="180"
+                                />
+                            </div>
+                            <div class="col-sm-9 col-lg-10">
+                                <h3 class="h5 mt-4">
+                                    BK005 - Understanding Computer Systems
+                                </h3>
+                                <p>
+                                    <strong>
+                                        Author:
+                                    </strong>
+                                    Sam Rowan
+                                </p>
+                                <p>
+                                    <strong>
+                                        Category:
+                                    </strong>
+                                    Computing |
+                                    <strong>
+                                        Year:
+                                    </strong>
+                                    2025
+                                </p>
+                                <p>
+                                    <strong>
+                                        Shelf:
+                                    </strong>
+                                    C-04 |
+                                    <strong>
+                                        Status:
+                                    </strong>
+                                    Overdue
+                                </p>
+                                <p>
+                                    Basic ideas about computer memory and machine instructions.
+                                </p>
+                                <p>
+                                    <a href="borrow-return.html">
+                                        Open the borrowing form
+                                    </a>
+                                    and choose BK005.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="border rounded bg-white p-3 mb-3" id="BK006">
+                        <div class="row g-3">
+                            <div class="col-sm-3 col-lg-2">
+                                <img
+                                    alt="Research and Academic Writing cover"
+                                    class="img-fluid rounded"
+                                    height="246"
+                                    src="images/research.svg"
+                                    width="180"
+                                />
+                            </div>
+                            <div class="col-sm-9 col-lg-10">
+                                <h3 class="h5 mt-4">
+                                    BK006 - Research and Academic Writing
+                                </h3>
+                                <p>
+                                    <strong>
+                                        Author:
+                                    </strong>
+                                    Lina Hart
+                                </p>
+                                <p>
+                                    <strong>
+                                        Category:
+                                    </strong>
+                                    Study skills |
+                                    <strong>
+                                        Year:
+                                    </strong>
+                                    2023
+                                </p>
+                                <p>
+                                    <strong>
+                                        Shelf:
+                                    </strong>
+                                    S-01 |
+                                    <strong>
+                                        Status:
+                                    </strong>
+                                    Available
+                                </p>
+                                <p>
+                                    A guide to finding information and writing academic reports.
+                                </p>
+                                <p>
+                                    <a href="borrow-return.html">
+                                        Open the borrowing form
+                                    </a>
+                                    and choose BK006.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <p>
+                        <a href="catalog.html">
+                            Back to the catalog
+                        </a>
+                    </p>
+                </div>
+            </div>
         </main>
-        <!-- 4. Website footer -->
-        <footer>
-            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
-            <p>Library Management System - Student Project</p>
+        <footer class="border-top bg-white py-3 mt-4">
+            <div class="container">
+                <p class="mb-1">
+                    Red Team | Sultan Qaboos University | COMP3700 | Fall 2026
+                </p>
+                <p class="small text-secondary mb-0">
+                    Library Management System · Student Project
+                </p>
+            </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+        </script>
     </body>
 </html>
-
