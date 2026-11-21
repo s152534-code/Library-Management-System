@@ -22,8 +22,8 @@ The JavaScript files are in `js/`. They use ordinary functions, arrays, loops an
 Records stay in JavaScript arrays only while their page remains open. Refreshing or navigating away restores the sample records. The dashboard and loan list show the original Part II sample snapshot. The contact form prepares an email; login and borrowing are local form demonstrations.
 
 ## GitHub Pages
-Repository: https://github.com/s152534-code/Library-Management-System
-Website: https://s152534-code.github.io/Library-Management-System/index.html
+- Repository: https://github.com/s152534-code/Library-Management-System
+- Website: https://s152534-code.github.io/Library-Management-System/index.html
 
 ## Photo credits
 Gallery images are from Unsplash under the Unsplash License (https://unsplash.com/license):
