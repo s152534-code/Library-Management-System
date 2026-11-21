@@ -1,1 +1,312 @@
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <title>
+            Library Fee Calculator - Library Management System
+        </title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="bg-light">
+        <a class="visually-hidden-focusable" href="#main-content">
+            Skip to content
+        </a>
+        <header class="bg-white border-bottom py-3">
+            <div class="container d-flex align-items-center gap-3">
+                <a href="index.html">
+                    <img
+                        alt="Library home"
+                        class="object-fit-contain"
+                        height="50"
+                        src="images/logo.png"
+                        width="92"
+                    />
+                </a>
+                <div>
+                    <p class="fs-4 mb-0">
+                        Library Management System
+                    </p>
+                    <p class="text-secondary mb-0">
+                        Red Team · COMP3700
+                    </p>
+                </div>
+            </div>
+        </header>
+        <nav aria-label="Main navigation" class="navbar navbar-expand-xl bg-dark" data-bs-theme="dark">
+            <div class="container">
+                <span class="navbar-brand d-xl-none">
+                    Menu
+                </span>
+                <button
+                    aria-controls="main-nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#main-nav"
+                    data-bs-toggle="collapse"
+                    type="button"
+                >
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="navbar-nav gap-xl-2">
+                        <li>
+                            <a class="nav-link" href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="catalog.html">
+                                Book Catalog
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="members.html">
+                                Members
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="questionnaire.html">
+                                Questionnaire
+                            </a>
+                        </li>
+                        <li>
+                            <a aria-current="page" class="nav-link active" href="calculate.html">
+                                Calculator
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="funpage.html">
+                                Book Game
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button
+                                aria-expanded="false"
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                type="button"
+                            >
+                                More
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="book-details.html">
+                                        Book Details
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="manage-books.html">
+                                        Manage Books
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="borrow-return.html">
+                                        Borrow and Return
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="dashboard.html">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="login.html">
+                                        Login
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="about.html">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="contact.html">
+                                        Contact Us
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="container py-4" id="main-content">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h1 class="h2">
+                        Library Fee Calculator
+                    </h1>
+                    <p>
+                        Estimate overdue fines and printing costs in Omani rials (OMR).
+                    </p>
+                    <div class="row g-4">
+                        <div class="col-lg-7">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form
+                                        class="row g-3 was-validated"
+                                        id="calculator-form"
+                                        onchange="clearResult()"
+                                        onreset="clearResult()"
+                                        onsubmit="return calculateFees()"
+                                    >
+                                        <div class="col-md-6">
+                                            <label class="form-label" for="late-books">
+                                                Number of overdue books *
+                                            </label>
+                                            <input
+                                                aria-describedby="late-books-error"
+                                                class="form-control"
+                                                id="late-books"
+                                                max="50"
+                                                min="0"
+                                                name="late-books"
+                                                required=""
+                                                step="1"
+                                                type="number"
+                                                value="2"
+                                            />
+                                            <div class="invalid-feedback" id="late-books-error">
+                                                Please enter number of overdue books.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label" for="late-days">
+                                                Days overdue *
+                                            </label>
+                                            <input
+                                                aria-describedby="late-days-error"
+                                                class="form-control"
+                                                id="late-days"
+                                                max="365"
+                                                min="0"
+                                                name="late-days"
+                                                required=""
+                                                step="1"
+                                                type="number"
+                                                value="5"
+                                            />
+                                            <div class="invalid-feedback" id="late-days-error">
+                                                Please enter days overdue.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label" for="print-pages">
+                                                Pages to print *
+                                            </label>
+                                            <input
+                                                aria-describedby="print-pages-error"
+                                                class="form-control"
+                                                id="print-pages"
+                                                max="1000"
+                                                min="0"
+                                                name="print-pages"
+                                                required=""
+                                                step="1"
+                                                type="number"
+                                                value="10"
+                                            />
+                                            <div class="invalid-feedback" id="print-pages-error">
+                                                Please enter pages to print.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label" for="fee-member">
+                                                Member type
+                                            </label>
+                                            <select class="form-select" id="fee-member" name="fee-member">
+                                                <option value="Student">
+                                                    Student
+                                                </option>
+                                                <option value="Teacher">
+                                                    Teacher
+                                                </option>
+                                                <option value="Community">
+                                                    Community
+                                                </option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please select an option.
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input
+                                                    checked=""
+                                                    class="form-check-input"
+                                                    id="active-member"
+                                                    type="checkbox"
+                                                />
+                                                <label class="form-check-label" for="active-member">
+                                                    Active membership
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 d-flex gap-2">
+                                            <button class="btn btn-danger" type="submit">
+                                                Calculate total
+                                            </button>
+                                            <button class="btn btn-outline-secondary" type="reset">
+                                                Reset
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div
+                                class="border rounded bg-white p-3 mt-3 d-none"
+                                id="fee-result"
+                                role="status"
+                            >
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2 class="h5">
+                                        How the total is calculated
+                                    </h2>
+                                    <p>
+                                        Overdue fine = books × days overdue × OMR 0.200, up to OMR 5.000 per
+                                        book.
+                                    </p>
+                                    <p>
+                                        Active students receive a 25% discount on the overdue fine. Printing
+                                        costs OMR 0.025 per page.
+                                    </p>
+                                    <p>
+                                        Total = overdue fine − discount + printing cost.
+                                    </p>
+                                    <p class="small text-secondary mb-0">
+                                        These are sample project rates, not official university library
+                                        charges.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="border-top bg-white py-3 mt-4">
+            <div class="container">
+                <p class="mb-1">
+                    Red Team | Sultan Qaboos University | COMP3700 | Fall 2026
+                </p>
+                <p class="small text-secondary mb-0">
+                    Library Management System · Student Project
+                </p>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+        </script>
+        <script src="js/calculate.js">
+        </script>
+    </body>
+</html>
