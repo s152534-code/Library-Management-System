@@ -1,169 +1,364 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Members - Library Management System</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <title>
+            Members - Library Management System
+        </title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
     </head>
-    <body>
-        <!-- 1. Website header -->
-        <header>
-            <a href="index.html">
-                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
-            </a>
-            <h1>Library Management System</h1>
-            <p>Red Team - COMP3700</p>
+    <body class="bg-light">
+        <a class="visually-hidden-focusable" href="#main-content">
+            Skip to content
+        </a>
+        <header class="bg-white border-bottom py-3">
+            <div class="container d-flex align-items-center gap-3">
+                <a href="index.html">
+                    <img
+                        alt="Library home"
+                        class="object-fit-contain"
+                        height="50"
+                        src="images/logo.png"
+                        width="92"
+                    />
+                </a>
+                <div>
+                    <p class="fs-4 mb-0">
+                        Library Management System
+                    </p>
+                    <p class="text-secondary mb-0">
+                        Red Team · COMP3700
+                    </p>
+                </div>
+            </div>
         </header>
-        <!-- 2. Navigation: all pages use the same links. -->
-        <nav aria-label="Main navigation">
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="catalog.html">Book Catalog</a>
-                </li>
-                <li>
-                    <a href="book-details.html">Book Details</a>
-                </li>
-                <li>
-                    <a href="manage-books.html">Manage Books</a>
-                </li>
-                <li>
-                    <a href="borrow-return.html">Borrow and Return</a>
-                </li>
-                <li>
-                    <a href="members.html" class="current" aria-current="page">Members</a>
-                </li>
-                <li>
-                    <a href="dashboard.html">Dashboard</a>
-                </li>
-                <li>
-                    <a href="login.html">Login</a>
-                </li>
-                <li>
-                    <a href="about.html">About Us</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact Us</a>
-                </li>
-            </ul>
+        <nav aria-label="Main navigation" class="navbar navbar-expand-xl bg-dark" data-bs-theme="dark">
+            <div class="container">
+                <span class="navbar-brand d-xl-none">
+                    Menu
+                </span>
+                <button
+                    aria-controls="main-nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#main-nav"
+                    data-bs-toggle="collapse"
+                    type="button"
+                >
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="navbar-nav gap-xl-2">
+                        <li>
+                            <a class="nav-link" href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="catalog.html">
+                                Book Catalog
+                            </a>
+                        </li>
+                        <li>
+                            <a aria-current="page" class="nav-link active" href="members.html">
+                                Members
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="questionnaire.html">
+                                Questionnaire
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="calculate.html">
+                                Calculator
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="funpage.html">
+                                Book Game
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button
+                                aria-expanded="false"
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                type="button"
+                            >
+                                More
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="book-details.html">
+                                        Book Details
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="manage-books.html">
+                                        Manage Books
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="borrow-return.html">
+                                        Borrow and Return
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="dashboard.html">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="login.html">
+                                        Login
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="about.html">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="contact.html">
+                                        Contact Us
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <!-- 3. Page content -->
-        <main id="main-content">
-            <h2>Members</h2>
-            <p>Use this practice form to enter an example library member.</p>
-            <form action="https://httpbin.org/get" method="get" target="_blank" rel="noopener">
-                <input type="hidden" name="form_type" value="member_registration"/>
-                <fieldset>
-                    <legend>Member information</legend>
+        <main class="container py-4" id="main-content">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h1 class="h2">
+                        Members
+                    </h1>
                     <p>
-                        <label for="member_name">Sample full name *</label>
-                        <input type="text" id="member_name" name="member_name" required="required" maxlength="80" placeholder="Demo Member 05"/>
+                        Find a sample member or add another record to the list.
                     </p>
-                    <p>
-                        <label for="member_email">Sample email *</label>
-                        <input type="email" id="member_email" name="member_email" required="required" placeholder="reader@example.com"/>
+                    <section class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="h5">
+                                Find a member
+                            </h2>
+                            <form
+                                class="row g-3 was-validated"
+                                id="member-search"
+                                onsubmit="displayMembers(); return false"
+                            >
+                                <div class="col-md-6">
+                                    <label class="form-label" for="member-query">
+                                        ID or name
+                                    </label>
+                                    <input
+                                        aria-describedby="member-query-error"
+                                        class="form-control"
+                                        id="member-query"
+                                        maxlength="80"
+                                        name="member-query"
+                                        type="text"
+                                    />
+                                    <div class="invalid-feedback" id="member-query-error">
+                                        Please enter id or name.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="filter-type">
+                                        Member type
+                                    </label>
+                                    <select class="form-select" id="filter-type" name="filter-type">
+                                        <option value="All types">
+                                            All types
+                                        </option>
+                                        <option value="Student">
+                                            Student
+                                        </option>
+                                        <option value="Teacher">
+                                            Teacher
+                                        </option>
+                                        <option value="Community">
+                                            Community
+                                        </option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select an option.
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex gap-2">
+                                    <button class="btn btn-danger" type="submit">
+                                        Search
+                                    </button>
+                                    <button
+                                        class="btn btn-outline-secondary"
+                                        onclick="resetMemberSearch()"
+                                        type="button"
+                                    >
+                                        Reset
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                    <p id="member-count" role="status">
                     </p>
-                    <p>
-                        <label for="member_type">Member type</label>
-                        <select id="member_type" name="member_type">
-                            <option value="student">Student</option>
-                            <option value="teacher">Teacher</option>
-                            <option value="community">Community</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="interests">Reading interests</label>
-                        <select id="interests" name="interests" multiple="multiple" size="3">
-                            <option value="computing">Computing</option>
-                            <option value="mathematics">Mathematics</option>
-                            <option value="study_skills">Study skills</option>
-                        </select>
-                    </p>
-                    <p>Hold Ctrl on Windows or Command on Mac to choose more than one interest.</p>
-                </fieldset>
-                <fieldset>
-                    <legend>Preferences</legend>
-                    <div class="choices">
-                        <label>
-                            <input type="radio" name="contact_method" value="email" checked="checked"/> Contact by email</label>
-                        <label>
-                            <input type="radio" name="contact_method" value="library_desk"/> Contact at the library desk</label>
-                        <label>
-                            <input type="checkbox" name="updates" value="yes"/> Receive collection updates</label>
-                        <label>
-                            <input type="checkbox" name="sample_data" value="yes" required="required"/> I am using fictional sample data. *</label>
+                    <div aria-label="Library members" class="table-responsive" role="region" tabindex="0">
+                        <table
+                            aria-label="Library members"
+                            class="table table-bordered align-middle mb-0"
+                            id="member-table"
+                        >
+                        </table>
                     </div>
-                </fieldset>
-                <p>
-                    <input class="button" type="submit" value="Submit Member"/>
-                    <input class="button" type="reset" value="Reset"/>
-                </p>
-                <p class="note">This is a practice form. Use fictional data only. 
-                The values are sent to httpbin in a new tab and are not saved in this website.</p>
-            </form>
-            <h3>Sample member list</h3>
-            <div class="table-container" tabindex="0" role="region" aria-label="Member list">
-                <table class="member-table">
-                    <caption>Fictional member records</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col" rowspan="2">ID</th>
-                            <th scope="col" rowspan="2">Name</th>
-                            <th scope="colgroup" colspan="2">Membership</th>
-                            <th scope="col" rowspan="2">Active loans</th>
-                        </tr>
-                        <tr>
-                            <th scope="col">Type</th>
-                            <th scope="col">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">MB001</th>
-                            <td>Demo Member 01</td>
-                            <td>Student</td>
-                            <td>Active</td>
-                            <td>1</td>
-                        </tr>
-                        <tr class="alternate-row">
-                            <th scope="row">MB002</th>
-                            <td>Demo Member 02</td>
-                            <td>Student</td>
-                            <td>Active</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">MB003</th>
-                            <td>Demo Member 03</td>
-                            <td>Teacher</td>
-                            <td>Active</td>
-                            <td>0</td>
-                        </tr>
-                        <tr class="alternate-row">
-                            <th scope="row">MB004</th>
-                            <td>Demo Member 04</td>
-                            <td>Community</td>
-                            <td>Inactive</td>
-                            <td>0</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th scope="row" colspan="4">Total members: 4</th>
-                            <td>2 loans</td>
-                        </tr>
-                    </tfoot>
-                </table>
+                    <section class="card mt-4">
+                        <div class="card-body">
+                            <h2 class="h5">
+                                Add a member
+                            </h2>
+                            <form
+                                class="row g-3 was-validated"
+                                id="member-add"
+                                onreset='document.getElementById("member-message").innerText = ""'
+                                onsubmit="return addMember()"
+                            >
+                                <div class="col-md-6">
+                                    <label class="form-label" for="member-id">
+                                        Member ID *
+                                    </label>
+                                    <input
+                                        aria-describedby="member-id-help member-id-error"
+                                        class="form-control"
+                                        id="member-id"
+                                        name="member-id"
+                                        pattern="MB[0-9]{3}"
+                                        placeholder="MB005"
+                                        required=""
+                                        type="text"
+                                    />
+                                    <div class="form-text" id="member-id-help">
+                                        Use MB followed by three digits, for example MB005.
+                                    </div>
+                                    <div class="invalid-feedback" id="member-id-error">
+                                        Use MB followed by three digits, for example MB005.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="member-name">
+                                        Member name *
+                                    </label>
+                                    <input
+                                        aria-describedby="member-name-error"
+                                        class="form-control"
+                                        id="member-name"
+                                        maxlength="80"
+                                        name="member-name"
+                                        pattern=".*\S.*"
+                                        placeholder="Demo Member 05"
+                                        required=""
+                                        type="text"
+                                    />
+                                    <div class="invalid-feedback" id="member-name-error">
+                                        Please enter member name.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="member-type">
+                                        Member type
+                                    </label>
+                                    <select class="form-select" id="member-type" name="member-type">
+                                        <option value="Student">
+                                            Student
+                                        </option>
+                                        <option value="Teacher">
+                                            Teacher
+                                        </option>
+                                        <option value="Community">
+                                            Community
+                                        </option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select an option.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="member-status">
+                                        Status
+                                    </label>
+                                    <select class="form-select" id="member-status" name="member-status">
+                                        <option value="Active">
+                                            Active
+                                        </option>
+                                        <option value="Inactive">
+                                            Inactive
+                                        </option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select an option.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="member-loans">
+                                        Active loans *
+                                    </label>
+                                    <input
+                                        aria-describedby="member-loans-error"
+                                        class="form-control"
+                                        id="member-loans"
+                                        max="20"
+                                        min="0"
+                                        name="member-loans"
+                                        required=""
+                                        step="1"
+                                        type="number"
+                                        value="0"
+                                    />
+                                    <div class="invalid-feedback" id="member-loans-error">
+                                        Please enter active loans.
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex gap-2">
+                                    <button class="btn btn-danger" type="submit">
+                                        Add member
+                                    </button>
+                                    <button class="btn btn-outline-secondary" type="reset">
+                                        Reset
+                                    </button>
+                                </div>
+                                <p class="form-status col-12 mb-0" id="member-message" role="status">
+                                </p>
+                            </form>
+                            <p class="small text-secondary mt-3">
+                                Records are kept in this page while it is open. Refreshing or leaving the page
+                                restores the original sample records.
+                            </p>
+                        </div>
+                    </section>
+                </div>
             </div>
         </main>
-        <!-- 4. Website footer -->
-        <footer>
-            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
-            <p>Library Management System - Student Project</p>
+        <footer class="border-top bg-white py-3 mt-4">
+            <div class="container">
+                <p class="mb-1">
+                    Red Team | Sultan Qaboos University | COMP3700 | Fall 2026
+                </p>
+                <p class="small text-secondary mb-0">
+                    Library Management System · Student Project
+                </p>
+            </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+        </script>
+        <script src="js/data.js">
+        </script>
+        <script src="js/members.js">
+        </script>
     </body>
 </html>
