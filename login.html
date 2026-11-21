@@ -1,102 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Login Example - Library Management System</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <title>
+            Login - Library Management System
+        </title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
     </head>
-    <body>
-        <!-- 1. Website header -->
-        <header>
-            <a href="index.html">
-                <img src="images/logo.png" alt="Library Management System logo" width="1200" height="650"/>
-            </a>
-            <h1>Library Management System</h1>
-            <p>Red Team - COMP3700</p>
+    <body class="bg-light">
+        <a class="visually-hidden-focusable" href="#main-content">
+            Skip to content
+        </a>
+        <header class="bg-white border-bottom py-3">
+            <div class="container d-flex align-items-center gap-3">
+                <a href="index.html">
+                    <img
+                        alt="Library home"
+                        class="object-fit-contain"
+                        height="50"
+                        src="images/logo.png"
+                        width="92"
+                    />
+                </a>
+                <div>
+                    <p class="fs-4 mb-0">
+                        Library Management System
+                    </p>
+                    <p class="text-secondary mb-0">
+                        Red Team · COMP3700
+                    </p>
+                </div>
+            </div>
         </header>
-        <!-- 2. Navigation: all pages use the same links. -->
-        <nav aria-label="Main navigation">
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="catalog.html">Book Catalog</a>
-                </li>
-                <li>
-                    <a href="book-details.html">Book Details</a>
-                </li>
-                <li>
-                    <a href="manage-books.html">Manage Books</a>
-                </li>
-                <li>
-                    <a href="borrow-return.html">Borrow and Return</a>
-                </li>
-                <li>
-                    <a href="members.html">Members</a>
-                </li>
-                <li>
-                    <a href="dashboard.html">Dashboard</a>
-                </li>
-                <li>
-                    <a href="login.html" class="current" aria-current="page">Login</a>
-                </li>
-                <li>
-                    <a href="about.html">About Us</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact Us</a>
-                </li>
-            </ul>
+        <nav aria-label="Main navigation" class="navbar navbar-expand-xl bg-dark" data-bs-theme="dark">
+            <div class="container">
+                <span class="navbar-brand d-xl-none">
+                    Menu
+                </span>
+                <button
+                    aria-controls="main-nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#main-nav"
+                    data-bs-toggle="collapse"
+                    type="button"
+                >
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="navbar-nav gap-xl-2">
+                        <li>
+                            <a class="nav-link" href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="catalog.html">
+                                Book Catalog
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="members.html">
+                                Members
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="questionnaire.html">
+                                Questionnaire
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="calculate.html">
+                                Calculator
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="funpage.html">
+                                Book Game
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button
+                                aria-expanded="false"
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                type="button"
+                            >
+                                More
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="book-details.html">
+                                        Book Details
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="manage-books.html">
+                                        Manage Books
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="borrow-return.html">
+                                        Borrow and Return
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="dashboard.html">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a aria-current="page" class="dropdown-item active" href="login.html">
+                                        Login
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="about.html">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="contact.html">
+                                        Contact Us
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <!-- 3. Page content -->
-        <main id="main-content">
-            <h2>Login</h2>
-            <p>This page shows the design of a login form. Real login and access control will be added in a later phase.</p>
-            <form action="https://httpbin.org/get" method="get" target="_blank" rel="noopener">
-                <input type="hidden" name="form_type" value="login_example"/>
-                <fieldset>
-                    <legend>login details</legend>
+        <main class="container py-4" id="main-content">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h1 class="h2 mb-3">
+                        Login
+                    </h1>
                     <p>
-                        <label for="demo_username">username</label>
-                        <input type="text" id="demo_username" name="demo_username" value="demo-user" required="required"/>
+                        This page shows the design of a login form. Real login and access control will be
+                        added in a later phase.
                     </p>
-                    <p class="note">Do not use a real account or password. 
+                    <form
+                        class="was-validated border rounded bg-white p-3 mb-3"
+                        onreset='document.getElementById("login-message").innerText = ""'
+                        onsubmit="return checkLogin()"
+                    >
+                        <fieldset class="row g-3 mb-3">
+                            <legend class="h5">
+                                login details
+                            </legend>
+                            <div class="col-md-6">
+                                <label class="form-label" for="demo_username">
+                                    username
+                                </label>
+                                <input
+                                    aria-describedby="demo_username-error"
+                                    class="form-control"
+                                    id="demo_username"
+                                    name="demo_username"
+                                    pattern=".*\S.*"
+                                    required="required"
+                                    type="text"
+                                    value="demo-user"
+                                />
+                                <div class="invalid-feedback" id="demo_username-error">
+                                    Please check this field.
+                                </div>
+                            </div>
+                            <p class="col-12">
+                                Do not use a real account or password. 
                         The password below is fixed demonstration text. 
-                        The form does not log you in, at least for now.</p>
-
+                        The form does not log you in, at least for now.
+                            </p>
+                            <div class="col-md-6">
+                                <label class="form-label" for="demo_password">
+                                    Fixed demonstration password
+                                </label>
+                                <input
+                                    aria-describedby="demo_password-error"
+                                    autocomplete="off"
+                                    class="form-control"
+                                    id="demo_password"
+                                    name="demo_password"
+                                    readonly="readonly"
+                                    type="password"
+                                    value="demo-only"
+                                />
+                                <div class="invalid-feedback" id="demo_password-error">
+                                    Please check this field.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="role">
+                                    Role
+                                </label>
+                                <select
+                                    aria-describedby="role-error"
+                                    class="form-select"
+                                    id="role"
+                                    name="role"
+                                >
+                                    <option value="member">
+                                        Member
+                                    </option>
+                                    <option value="librarian">
+                                        Librarian
+                                    </option>
+                                </select>
+                                <div class="invalid-feedback" id="role-error">
+                                    Please check this field.
+                                </div>
+                            </div>
+                        </fieldset>
+                        <p>
+                            <input class="btn btn-danger" type="submit" value="Submit Login"/>
+                            <input class="btn btn-outline-secondary" type="reset" value="Reset"/>
+                        </p>
+                        <p class="small text-secondary">
+                            This is a sample form. It checks your entries on this page and does not save or
+                            send them.
+                        </p>
+                        <p>
+                            <input
+                                class="btn btn-outline-secondary"
+                                disabled="disabled"
+                                type="button"
+                                value="Password recovery unavailable"
+                            />
+                        </p>
+                        <p class="form-status mb-0" id="login-message" role="status">
+                        </p>
+                    </form>
                     <p>
-                        <label for="demo_password">Fixed demonstration password</label>
-                        <input type="password" id="demo_password" name="demo_password" value="demo-only" readonly="readonly" autocomplete="off"/>
+                        The password recovery button is a control example for a future phase. It does not
+                        perform an action.
                     </p>
                     <p>
-                        <label for="role">Role</label>
-                        <select id="role" name="role">
-                            <option value="member">Member</option>
-                            <option value="librarian">Librarian</option>
-                        </select>
+                        <a href="members.html">
+                            Open the member registration form
+                        </a>
                     </p>
-                </fieldset>
-                <p>
-                    <input class="button" type="submit" value="Submit Login"/>
-                    <input class="button" type="reset" value="Reset"/>
-                </p>
-                <p class="note">This is a practice form. Use fictional data only. 
-                The values are sent to httpbin in a new tab and are not saved in this website.</p>
-                <p>
-                    <input class="button" type="button" value="Password recovery unavailable" disabled="disabled"/>
-                </p>
-            </form>
-            <p>The password recovery button is a control example for a future phase. It does not perform an action.</p>
-            <p>
-                <a href="members.html">Open the member registration form</a>
-            </p>
+                </div>
+            </div>
         </main>
-        <!-- 4. Website footer -->
-        <footer>
-            <p>Red Team | Sultan Qaboos University | COMP3700 | Fall 2026</p>
-            <p>Library Management System - Student Project</p>
+        <footer class="border-top bg-white py-3 mt-4">
+            <div class="container">
+                <p class="mb-1">
+                    Red Team | Sultan Qaboos University | COMP3700 | Fall 2026
+                </p>
+                <p class="small text-secondary mb-0">
+                    Library Management System · Student Project
+                </p>
+            </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+        </script>
+        <script src="js/forms.js">
+        </script>
     </body>
 </html>
